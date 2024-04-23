@@ -157,32 +157,34 @@ function showCart() {
     // resets contents of shopping cart container
     cartContainer.innerHTML = "";
     let total = 0;
-    for (let itemName in cart) {
-        const itemObj = menuItems.find(item => item.name === itemName);
-        if (itemObj) {
-            const itemLine = document.createElement("div");
-            itemLine.classList.add("dish");
-            let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
-            itemLine.innerHTML = `
-            <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
-            <span class="dish_name">${itemObj["name"]}</span>
-            <span class="dish_quantity"><button class="remove">-</button>${cart[itemName].quantity}<button class="add">+</button></span>
-            <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
-            `;
-            cartContainer.appendChild(itemLine);
-            total += lineTotal;
-            // Add event listeners to + and - buttons to increase/decrease quantity of item
-            const addButton = itemLine.querySelector(".add");
-            const removeButton = itemLine.querySelector(".remove");
-            addButton.addEventListener("click", () => {
-                addToCart(itemObj);
-            });
-            removeButton.addEventListener("click", () => {
-                removeFromCart(itemObj);
-            });
-        }
-        else {
-            cartContainer.innerHTML = "Your basket is currently empty";
+    if (Object.keys(cart).length === 0) {
+        cartContainer.innerHTML = "Your basket is currently empty";
+    } 
+    else {
+        for (let itemName in cart) {
+            const itemObj = menuItems.find(item => item.name === itemName);
+            if (itemObj) {
+                const itemLine = document.createElement("div");
+                itemLine.classList.add("dish");
+                let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
+                itemLine.innerHTML = `
+                <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
+                <span class="dish_name">${itemObj["name"]}</span>
+                <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
+                <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
+                `;
+                cartContainer.appendChild(itemLine);
+                total += lineTotal;
+                // Add event listeners to + and - buttons to increase/decrease quantity of item
+                const addIcon = itemLine.querySelector(".add");
+                const removeIcon = itemLine.querySelector(".remove");
+                addIcon.addEventListener("click", () => {
+                    addToCart(itemObj);
+                });
+                removeIcon.addEventListener("click", () => {
+                    removeFromCart(itemObj);
+                });
+            }
         }
     }
     const totalDiv = document.createElement("div");

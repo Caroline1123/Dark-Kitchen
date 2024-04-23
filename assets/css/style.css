@@ -3,40 +3,44 @@
 }
 
 .shopping_cart {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  border: 1px solid grey;
-  margin: 1%;
+  overflow: auto;
 }
 .shopping_cart > div {
-  flex: 10%;
+  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 1%;
+  border: 1px solid pink;
+}
+
+.dish_quantity {
+  display: flex;
+  align-items: center;
 }
 
 .dish {
-  display: flex;
   border-top: 1px solid lightgrey;
 }
 .dish > * {
-  align-self: center;
+  border: 1px solid pink;
 }
 .dish button {
   border: none;
-  background: none;
+  background: lightgrey;
+  margin: 0 2%;
+  padding: 10px;
+  border-radius: 50%;
 }
 .dish button:hover {
   cursor: pointer;
 }
 
 .dish_thumbnail {
-  flex: 15%;
   width: 75px;
   height: 75px;
-}
-
-.dish_quantity {
-  flex: 10%;
 }
 
 .dish_name {
@@ -44,19 +48,11 @@
   flex: 15%;
 }
 
-.line_total {
-  flex: 10%;
-}
-
 .total {
   border-top: 3px solid black;
   font-weight: bold;
   display: flex;
-}
-.total span {
-  flex: 50%;
-  text-align: right;
-  padding-right: 20%;
+  flex-direction: column;
 }
 .total .checkout {
   background-color: rgb(81, 199, 81);
