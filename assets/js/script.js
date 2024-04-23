@@ -122,65 +122,6 @@ const menuItems = [
         }
     ];
 
-//Function to create a menu item card
-function createMenuItemCard(menuItem) {
-    //Create a div element for the card
-    const card = document.createElement('div');
-    card.classList.add('menu-item');
-
-    //create elements for the name, price, description ect.
-    const name = document.createElement('h3');
-    name.textContent = menuItem.name;
-
-    const description = document.createElement('p'); 
-    description.textContent = menuItem.description; 
-
-    const price = document.createElement('p');
-    price.textContent = `Price: €${menuItem.price_EUR.toFixed(2)}`;
-
-    const image = document.createElement('img');
-    image.src = menuItem.img;
-    image.alt = menuItem.name;
-
-    const origin = document.createElement('p');
-    origin.textContent = menuItem.origin;
-
-    const addToCartButton = document.createElement('button');
-    addToCartButton.classList.add('cart');
-    addToCartButton.textContent = 'Add to Cart';
-
-    //append elements to the card
-    card.appendChild(name);
-    card.appendChild(price);
-    card.appendChild(description);
-    card.appendChild(image);
-    card.appendChild(addToCartButton);
-    card.appendChild(origin);
-    
-    return card;
-
-
-}
-
-// Function to add menu item cards to the body of the HTML document
-function addMenuItemsToBody(menuItems) {
-    // Select the body element
-    const body = document.querySelector('body');
-
-    // Loop through the menu items and create a card for each one
-    menuItems.forEach(menuItem => {
-        // Create a card for the current menu item
-        const menuItemCard = createMenuItemCard(menuItem);
-        // Append the card to the body
-        body.appendChild(menuItemCard);
-    });
-}
-
-// Call the function to add menu item cards to the body
-addMenuItemsToBody(menuItems);
-
-
-
 
 
 
@@ -189,30 +130,6 @@ addMenuItemsToBody(menuItems);
 
 
 // Filters
-
-// Function to filter menu items by category (Giovanni)
-function filterMenuItems(category) {
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => {
-        const origin = item.dataset.origin; 
-        
-        // Show or hide the menu item based on the category
-        if (category === 'all' || origin === category) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-}
-
-// Add event listeners to filter buttons
-const filterButtons = document.querySelectorAll('.filter-btn');
-filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const category = this.dataset.filter;
-        filterMenuItems(category);
-    });
-});
 
 
 
