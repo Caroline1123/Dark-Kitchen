@@ -5,28 +5,28 @@ const menu =
         "price_EUR": 12.50,
         "description": "A traditional Thai stir-fried rice noodle dish with tofu, bean sprouts, peanuts, and lime.",
         "ingredients": ["rice noodles", "tofu", "bean sprouts", "peanuts", "lime"],
-        "img": "pad_thai.jpg"
+        "img": "https://www.promidata.com/wp-content/uploads/2020/01/webshop-2020-1.png"
     },
     {
         "name": "Margherita Pizza",
         "price_EUR": 9.99,
         "description": "A classic Italian pizza topped with tomato sauce, mozzarella cheese, and fresh basil.",
         "ingredients": ["tomato sauce", "mozzarella cheese", "basil"],
-        "img": "margherita_pizza.jpg"
+        "img": "https://www.promidata.com/wp-content/uploads/2020/01/webshop-2020-1.png"
     },
     {
         "name": "Sushi Platter",
         "price_EUR": 18.75,
         "description": "Assorted sushi rolls including tuna, salmon, California rolls, and avocado rolls.",
         "ingredients": ["rice", "fish (tuna, salmon)", "avocado", "seaweed", "soy sauce"],
-        "img": "sushi_platter.jpg"
+        "img": "https://www.promidata.com/wp-content/uploads/2020/01/webshop-2020-1.png"
     },
     {
         "name": "Chicken Tikka Masala",
         "price_EUR": 14.99,
         "description": "A popular Indian dish with tender chicken pieces cooked in a creamy tomato sauce with spices.",
         "ingredients": ["chicken", "tomato sauce", "cream", "spices"],
-        "img": "chicken_tikka_masala.jpg"
+        "img": "https://www.promidata.com/wp-content/uploads/2020/01/webshop-2020-1.png"
     },
     {
         "name": "Tacos al Pastor",
@@ -106,45 +106,82 @@ const menu =
         "img": "chicken_quesadilla.jpg"
         }
 ]
-// GIOVANNI  : Generate cards
+// GIOVANNI  : Generate cards - OK
+
+
 // CAROLINE :  shopping cart
-const cart = [];
-function displayCart(cart) {
-    const cartContainer = document.querySelector('.shopping_cart');
-    for (item of cart) {
-        const itemLine = document.createElement("div");
-        itemLine.classList.add("dish");
-        let item_quantity = 0;
-        //TO DO : send elements of each item into shopping cart.
-    }
-};
+let cart = {};
+const main = document.querySelector("main");
+const cartContainer = document.querySelector(".shopping_cart");
 
 function addToCart(item) {
-    cart.push(item);
-};
-
-function removeFromCart(item) {
-    const itemIndex = cart.indexOf(item);
-    cart.splice(itemIndex,1);
-};
-
-function deleteCart() {
-    cart = [];
-};
-
-// may be a useless func :-)
-function cartTotal() {
-    let total = 0;
-    for (let meal of cart) {
-        total += meal["price_EUR"];
+    if (cart[item["name"]]) {
+        cart[item["name"]].quantity++;
     }
-    return total;
+    else {
+        cart[item["name"]] = { name: item["name"], quantity: 1 };
+    }
+    showCart();
 }
 
+function removeFromCart(item) {
+    if (cart[item["name"]].quantity == 1) {
+        delete cart[item["name"]];
+    }
+    else {
+        cart[item["name"]].quantity--;
+    }
+    showCart();
+}
+
+function showCart() {
+    // resets contents of shopping cart container
+    cartContainer.innerHTML = "";
+    let total = 0;
+    for (let itemName in cart) {
+        const itemObj = menu.find(item => item.name === itemName);
+        if (itemObj) {
+            const itemLine = document.createElement("div");
+            itemLine.classList.add("dish");
+            let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
+            itemLine.innerHTML = `
+            <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
+            <span class="dish_name">${itemObj["name"]}</span>
+            <span class="dish_quantity"><button class="add">+</button>${cart[itemName].quantity}<button class="remove">-</button></span>
+            <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
+            `;
+            cartContainer.appendChild(itemLine);
+            total += lineTotal;
+            
+            // Add event listeners to + and - buttons to increase/decrease quantity of item
+            const addButton = itemLine.querySelector(".add");
+            const removeButton = itemLine.querySelector(".remove");
+            addButton.addEventListener("click", () => {
+                addToCart(itemObj);
+            });
+            removeButton.addEventListener("click", () => {
+                removeFromCart(itemObj);
+            });
+        }
+    }
+    const totalDiv = document.createElement("div");
+    totalDiv.classList.add("total");
+    totalDiv.innerHTML = `<span class="></span><span class="price">€ ${total.toFixed(2)}</span>`
+    
+    cartContainer.appendChild(totalDiv);
+    main.appendChild(cartContainer);
+}
+
+// function deleteCart() {
+//     order = [];
+// };
+
+
 addToCart(menu[0]);
 addToCart(menu[0]);
-removeFromCart(menu[0]);
-console.log(`${cartTotal()} EUR`);
+addToCart(menu[3]);
+addToCart(menu[3]);
+addToCart(menu[2]);
 
 // Filters
 
