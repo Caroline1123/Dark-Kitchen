@@ -1,1 +1,60 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+}
+
+.shopping_cart {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  border: 1px solid red;
+  margin: 2%;
+  position: relative;
+}
+
+.dish {
+  padding: 2% 4%;
+  display: flex;
+  border-top: 1px solid lightgrey;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.dish > * {
+  overflow: hidden;
+  align-self: center;
+}
+.dish button {
+  border: none;
+  background: none;
+}
+.dish button:hover {
+  cursor: pointer;
+}
+
+.dish_thumbnail {
+  flex: 15%;
+  width: 75px;
+  height: 75px;
+}
+
+.dish_quantity {
+  flex: 10%;
+}
+
+.dish_name {
+  padding-left: 3%;
+  flex: 15%;
+}
+
+.line_total {
+  flex: 10%;
+}
+
+.total {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1% 0;
+  border-top: 3px solid black;
+  font-weight: bold;
+  text-align: right;
+}/*# sourceMappingURL=style.css.map */
