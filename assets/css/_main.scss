@@ -3,8 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Carrois+Gothic&family=Nanum+Gothic&display=swap');
 
+$primary-color: white;
+$secondary-color: black;
+
+.dark-theme{
+    $primary-color: black;
+    $secondary-color: white;
+}
+
 
 .menu-container{
+
 
     section{
 

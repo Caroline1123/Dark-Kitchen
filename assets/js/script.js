@@ -116,3 +116,29 @@ const menu =
         }
 ]
 
+
+// Dark mode
+
+const icon = document.getElementById("icon");
+const body = document.querySelector("body");
+
+
+icon.addEventListener("click", (event) => {
+    if(body.classList.contains("dark-theme")){
+        body.classList.remove("dark-theme");
+        icon.src = "assets/img/moon.png";
+    }
+    else{
+        body.classList.add("dark-theme");
+        icon.src = "assets/img/sun.png";
+
+    }
+})
+
+
+
+
+
+
+
+
