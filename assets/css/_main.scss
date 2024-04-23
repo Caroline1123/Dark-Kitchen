@@ -1,1 +1,32 @@
 // ABOUT SECTION, INFO, etc.
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Carrois+Gothic&family=Nanum+Gothic&display=swap');
+
+
+.menu-container{
+
+    section{
+
+
+        h1{
+            font-family: Berkshire Swash;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        ul{
+            padding: 10px;
+            list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        li{
+            padding: 20px;
+            
+        }
+        }
+    }
+}
