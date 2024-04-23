@@ -148,6 +148,11 @@ function removeFromCart(item) {
     showCart();
 }
 
+function clearCart() {
+    cart = {};
+    showCart();
+}
+
 function showCart() {
     // resets contents of shopping cart container
     cartContainer.innerHTML = "";
@@ -161,12 +166,11 @@ function showCart() {
             itemLine.innerHTML = `
             <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
             <span class="dish_name">${itemObj["name"]}</span>
-            <span class="dish_quantity"><button class="add">+</button>${cart[itemName].quantity}<button class="remove">-</button></span>
+            <span class="dish_quantity"><button class="remove">-</button>${cart[itemName].quantity}<button class="add">+</button></span>
             <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
             `;
             cartContainer.appendChild(itemLine);
             total += lineTotal;
-            
             // Add event listeners to + and - buttons to increase/decrease quantity of item
             const addButton = itemLine.querySelector(".add");
             const removeButton = itemLine.querySelector(".remove");
@@ -177,19 +181,21 @@ function showCart() {
                 removeFromCart(itemObj);
             });
         }
+        else {
+            cartContainer.innerHTML = "Your basket is currently empty";
+        }
     }
     const totalDiv = document.createElement("div");
     totalDiv.classList.add("total");
-    totalDiv.innerHTML = `<span class="></span><span class="price">€ ${total.toFixed(2)}</span>`
-    
+    totalDiv.innerHTML = `<button class="checkout">Checkout</button><span>€ ${total.toFixed(2)}</span>`
+    const checkoutButton = totalDiv.querySelector("button");
+    checkoutButton.addEventListener("click", (event) => {
+        clearCart();
+        alert("Thanks for your order!");
+    })
     cartContainer.appendChild(totalDiv);
     main.appendChild(cartContainer);
 }
-
-// function deleteCart() {
-//     order = [];
-// };
-
 
 addToCart(menuItems[0]);
 addToCart(menuItems[0]);
