@@ -1,12 +1,3 @@
-// GIOVANNI  : Generate cards
-// CAROLINE :  shopping cart
-
-
-
-// Filters
-
-// TOGGLE DARK MODE
-
 const menu = 
 [
     {
@@ -115,3 +106,46 @@ const menu =
         "img": "chicken_quesadilla.jpg"
         }
 ]
+// GIOVANNI  : Generate cards
+// CAROLINE :  shopping cart
+const cart = [];
+function displayCart(cart) {
+    const cartContainer = document.querySelector('.shopping_cart');
+    for (item of cart) {
+        const itemLine = document.createElement("div");
+        itemLine.classList.add("dish");
+        let item_quantity = 0;
+        //TO DO : send elements of each item into shopping cart.
+    }
+};
+
+function addToCart(item) {
+    cart.push(item);
+};
+
+function removeFromCart(item) {
+    const itemIndex = cart.indexOf(item);
+    cart.splice(itemIndex,1);
+};
+
+function deleteCart() {
+    cart = [];
+};
+
+// may be a useless func :-)
+function cartTotal() {
+    let total = 0;
+    for (let meal of cart) {
+        total += meal["price_EUR"];
+    }
+    return total;
+}
+
+addToCart(menu[0]);
+addToCart(menu[0]);
+removeFromCart(menu[0]);
+console.log(`${cartTotal()} EUR`);
+
+// Filters
+
+// TOGGLE DARK MODE
