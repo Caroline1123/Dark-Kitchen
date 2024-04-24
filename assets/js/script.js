@@ -189,6 +189,11 @@ function createMenuItemCard(menuItem) {
     const addToCartButton = document.createElement('button');
     addToCartButton.classList.add('cart');
     addToCartButton.textContent = 'Add to Cart';
+    addToCartButton.addEventListener('click',() => {
+        addToCart(menuItem);
+    })
+
+
     
     //append elements to the card
     card.appendChild(name);
