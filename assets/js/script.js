@@ -403,16 +403,25 @@ function filterMenuItems(category) {
 //TOGGLE DARK MODE
 const icon = document.getElementById("icon");
 const body = document.querySelector("body");
+const container = document.querySelector(".container");
+// const logo = document.querySelector(".logo");
+const logo = document.getElementsByClassName("logo")[0];
+
+
+// console.log(typeof(logo));
 
 
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
         body.classList.remove("dark-theme");
         icon.src = "assets/img/moon.png";
+        container.style.backgroundImage = "url('./assets/img/bg-light.svg')";
+        logo.src = "assets/img/logo-light.svg";
     }
     else{
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
-
+        container.style.backgroundImage = "url('./assets/img/bg-dark.svg')"; 
+        logo.src = "assets/img/logo-dark.svg";
     }
 })
