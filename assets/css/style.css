@@ -1,26 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nanum+Gothic&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Carrois+Gothic&family=Nanum+Gothic&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nanum+Gothic&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Carrois+Gothic&family=Nanum+Gothic&display=swap");
 * {
   margin: 0;
 }
 
 body {
-  padding: 0;
-  margin: 0;
   width: 100%;
+  position: relative;
 }
 
 .dark-theme {
   background-color: black;
   color: white;
-}
-
-.container.dark-theme {
-  background-image: url(assets/img/bg-dark.svg);
 }
 
 header {
@@ -29,12 +21,14 @@ header {
 }
 header .container {
   height: 800px;
-  background-image: url(/assets/img/bg-light.svg);
+  background-image: url("./../images/bg-light.svg");
   background-position: center;
   background-size: cover;
   width: 100%;
+  box-sizing: border-box;
 }
 header .container nav {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   padding: 50px 100px;
@@ -42,17 +36,17 @@ header .container nav {
   height: 50px;
   width: 100%;
 }
-header .container nav img.logo {
+header .container img.logo {
   width: 100px;
   height: 80px;
   padding: 20px 80px;
 }
-header .container nav ul {
+header .container ul {
   width: 100%;
   list-style: none;
   display: flex;
 }
-header .container nav ul #icon {
+header .container ul #icon {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -60,14 +54,14 @@ header .container nav ul #icon {
   padding-right: 20px;
   padding-top: 20px;
 }
-header .container nav ul li {
+header .container ul li {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   font-family: Carrois Gothic;
   font-size: 20px;
 }
-header .container h1 {
+header h1 {
   margin-top: 20px;
   padding: 50px;
   font-family: Berkshire Swash;
@@ -75,81 +69,41 @@ header .container h1 {
   font-weight: 700;
   text-align: center;
 }
-header .container p {
+header p {
   text-align: center;
   font-size: 20px;
   font-family: Carrois Gothic;
   font-size: 20px;
   padding: 20px;
 }
-header .container i {
+header i {
   text-align: center;
 }
 
-.shopping_cart {
+div.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}
+
+div.menu-item {
+  width: 360px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  border: 1px solid grey;
-  margin: 1%;
-}
-.shopping_cart > div {
-  flex: 10%;
-  padding: 1%;
+  justify-content: space-between;
 }
 
-.dish {
+img {
+  width: 360px;
+  height: 241px;
   display: flex;
-  border-top: 1px solid lightgrey;
-}
-.dish > * {
-  align-self: center;
-}
-.dish button {
-  border: none;
-  background: none;
-}
-.dish button:hover {
-  cursor: pointer;
-}
-
-.dish_thumbnail {
-  flex: 15%;
-  width: 75px;
-  height: 75px;
-}
-
-.dish_quantity {
-  flex: 10%;
-}
-
-.dish_name {
-  padding-left: 3%;
-  flex: 15%;
-}
-
-.line_total {
-  flex: 10%;
-}
-
-.total {
-  border-top: 3px solid black;
-  font-weight: bold;
-  display: flex;
-}
-.total span {
-  flex: 50%;
-  text-align: right;
-  padding-right: 20%;
-}
-.total .checkout {
-  background-color: rgb(81, 199, 81);
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  text-align: left;
-  border: none;
-  border-radius: 25px;
+  justify-content: center;
+  top: 20px;
 }
 
 main section h1 {
@@ -170,56 +124,56 @@ main section ul li {
   padding: 20px;
   font-size: 30px;
 }
-.menu-container section ul li i {
+main section ul li i {
   border-radius: 1px solid red;
 }
 
 .cart_modal {
+  font-family: "Carrois Gothic", sans-serif;
   display: none;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 25vh;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   z-index: 1;
-  width: 70vw;
-  height: 50vh; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: auto;
+  min-width: 45vw;
+  min-height: 50vh;
+  max-width: 45vw;
+  max-height: 50vh;
+  background-color: white;
+  border-style: ridge;
+  padding: 2%;
+}
+.cart_modal > img {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  width: 7%;
+  height: 7%;
 }
 
 .shopping_cart {
-  margin: 5%;
+  height: 100%;
+  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow: hidden;
 }
 .shopping_cart > div {
   flex: 1;
   display: flex;
   align-items: center;
   padding: 1%;
-  border: 1px solid pink;
+  border-bottom: 1px solid lightgrey;
 }
 
-.dish_quantity {
-  display: flex;
-  align-items: center;
+.dish span {
+  flex: 35%;
 }
-
-.dish {
-  border-top: 1px solid lightgrey;
-}
-.dish > * {
-  border: 1px solid pink;
-}
-.dish button {
-  border: none;
-  background: lightgrey;
-  margin: 0 2%;
-  padding: 10px;
-  border-radius: 50%;
-}
-.dish button:hover {
-  cursor: pointer;
+.dish span:first {
+  flex: 15%;
 }
 
 .dish_thumbnail {
@@ -228,23 +182,37 @@ main section ul li {
 }
 
 .dish_name {
-  padding-left: 3%;
-  flex: 15%;
+  padding-left: 1%;
+  flex: 25%;
+}
+
+.dish_quantity {
+  display: flex;
+  align-items: center;
+}
+.dish_quantity > img {
+  padding: 0 2%;
+  width: 25px;
+  height: 25px;
 }
 
 .total {
+  display: flex;
   border-top: 3px solid black;
   font-weight: bold;
-  display: flex;
-  flex-direction: column;
 }
 .total .checkout {
+  text-justify: center;
   background-color: rgb(81, 199, 81);
   color: white;
   font-weight: bold;
   padding: 10px;
-  text-align: left;
   border: none;
   border-radius: 25px;
 }
-/*# sourceMappingURL=style.css.map */
+.total span {
+  flex: 1;
+}
+.total span:first-of-type {
+  flex: 3;
+}/*# sourceMappingURL=style.css.map */

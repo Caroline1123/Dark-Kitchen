@@ -2,5 +2,11 @@
     margin: 0;
 }
 
-
-// ADD STYLES applicable to whole page
+body{
+    width: 100%;
+    position: relative;
+}
+.dark-theme {
+    background-color: $secondary-color;
+    color: $primary-color;
+}

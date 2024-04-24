@@ -1,50 +1,51 @@
 // ABOUT SECTION, INFO, etc.
 .cart_modal {
+    font-family: 'Carrois Gothic', sans-serif;
     display: none;
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 25vh;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
-    width: 70vw; 
-    height: 50vh; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    transform: translateX(-50%);
+    z-index: 1;
+    overflow:auto;
+    min-width: 45vw; 
+    min-height: 50vh;
+    max-width: 45vw;
+    max-height: 50vh;
+    background-color: $primary-color;
+    border-style: ridge;
+    padding: 2%;
+    > img {
+        position: absolute;
+        top:1%;
+        right: 1%;
+        width: 7%;
+        height: 7%;
+    }
 }
 
 .shopping_cart {
-    margin: 5%;
+    height: 100%;
+    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
     & > div {
         flex: 1;
         display:flex;
         align-items:center;  
         padding : 1%;
-        border: 1px solid pink;
+        border-bottom: 1px solid lightgrey;
     }
-}
-
-.dish_quantity {
-    display:flex;
-    align-items: center;
 }
 
 .dish {
-    border-top: 1px solid lightgrey;
-    & > * {
-        border: 1px solid pink;
-
+    span {
+        flex:35%;
     }
-    button {
-        border: none;
-        background: lightgrey;
-        margin: 0 2%;
-        padding : 10px;
-        border-radius: 50%;
-        &:hover {
-            cursor: pointer;
-        }
+    span:first {
+        flex:15%;
     }
 }
 
@@ -54,22 +55,37 @@
 }
 
 .dish_name {
-    padding-left: 3%;
-    flex : 15%;
+    padding-left: 1%;
+    flex : 25%;
+}
+
+.dish_quantity {
+    display:flex;
+    align-items: center;
+    & > img {
+        padding: 0 2%;
+        width: 25px;
+        height: 25px;
+    }
 }
 
 .total {
+    display: flex;
     border-top: 3px solid black;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
     .checkout {
+        text-justify: center;
         background-color: rgb(81, 199, 81);
         color:white;
         font-weight: bold;
         padding:  10px;
-        text-align: left;
         border:none;
         border-radius: 25px;
+    }
+    span {
+        flex: 1;
+    }
+    span:first-of-type {
+        flex:3;
     }
 }
