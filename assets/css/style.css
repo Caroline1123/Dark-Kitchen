@@ -23,7 +23,11 @@ header {
   height: 600px;
 }
 header .container {
-  background-image: url(assets/img/bg.svg);
+  height: 600px;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 header .container nav {
   display: flex;
@@ -32,14 +36,14 @@ header .container nav {
   align-items: center;
   height: 50px;
 }
-header .container .logo {
+header .container nav .logo {
   font-size: 30px;
 }
-header .container ul {
+header .container nav ul {
   list-style: none;
   display: flex;
 }
-header .container ul #icon {
+header .container nav ul #icon {
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -47,7 +51,7 @@ header .container ul #icon {
   padding-right: 15px;
   padding-top: 15px;
 }
-header .container ul li {
+header .container nav ul li {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
