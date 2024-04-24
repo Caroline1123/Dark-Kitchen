@@ -381,5 +381,10 @@ icon.addEventListener("click", (event) => {
 // Toggle shopping cart 
 const cartToggle = document.querySelector(".fa-cart-shopping")
 cartToggle.addEventListener("click", (event) => {
+    if (cartModal.style.display === "block") {
+        cartModal.style.display = "none";
+    }
+    else {
     cartModal.style.display = "block";
+    }
 });
