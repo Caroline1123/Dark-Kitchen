@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script defer src="./assets/js/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-*" crossorigin="anonymous" />
-
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script defer src="./assets/js/script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-*" crossorigin="anonymous" />
+    
+        <title>Document</title>
+    </head>
 <body>
     <header>
     <div class="container">
         <nav>
             <h1 class="logo">Dark kitchen</h1>
             <ul>
+                <img src="assets/img/moon.png" id="icon">
                 <li>Home</li>
                 <li>Menu</li>
                 <li>About</li>
                 <li><i class="fa-solid fa-cart-shopping"></i></li>
             </ul>
-            
         </nav>
         <h1>Dark Kitchen</h1>
         <p>Adresse</p>
@@ -29,17 +29,20 @@
     </div>
     </header>
     <main>
+        <div class="shopping_cart"></div>
         <div class="menu-container">
             <section>
                 <h1>Our Menu</h1>
                 <ul>
-                    <div class="filter-buttons">
-                        <button class="filter-btn" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="Asian">Asian</button>
-                        <button class="filter-btn" data-filter="Italy">Italian</button>
-                        <button class="filter-btn" data-filter="American">American</button>
-                        <button class="filter-btn" data-filter="Mexican">Mexican</button>
-                    </ul>
+                    <li><i id="Local" class="filter-btn fas fa-map-pin"></i></i></li>
+                    <li><i id="Asian" class="filter-btn fas fa-vihara"></i></i></i></li>
+                    <li><i id="Italian" class=" filter-btn fa-solid fa-pizza-slice"></i></li>
+                    <li><i id="US" class="filter-btn fas fa-hamburger"></i></li>
+                    <li><i id="Arab" class="filter-btn fas fa-star-and-crescent"></i></li>
+                    <li><i id="Veggie" class="filter-btn fas fa-utensils"></i></i></li>
+                    <li><i id="Desserts" class="filter-btn fas fa-ice-cream"></i></i></li>
+                    <li><i id="Drinks" class="filter-btn fas fa-cocktail"></i></i></li>
+                </ul>
             </section>
 
         </div>
