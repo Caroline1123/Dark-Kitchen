@@ -207,4 +207,29 @@ addToCart(menuItems[2]);
 
 // Filters
 
+// Function to filter menu items by category
+function filterMenuItems(category) {
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const origin = item.querySelector('p.origin').textContent; 
+        
+        // Show or hide the menu item based on the category
+        if (category === 'all' || origin === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Add event listeners to filter buttons
+const filterButtons = document.querySelectorAll('.filter-btn');
+filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.dataset.filter;
+        filterMenuItems(category);
+    });
+});
+
+
 // TOGGLE DARK MODE
