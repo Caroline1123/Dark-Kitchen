@@ -1,5 +1,3 @@
-// GIOVANNI  : Generate cards
-
 const menuItems = [
     {
         "name": "Pad Thai",
@@ -15,7 +13,7 @@ const menuItems = [
         "description": "A classic Italian pizza topped with tomato sauce, mozzarella cheese, and fresh basil.",
         "ingredients": ["tomato sauce", "mozzarella cheese", "basil"],
         "img": "https://images.prismic.io/eataly-us/ed3fcec7-7994-426d-a5e4-a24be5a95afd_pizza-recipe-main.jpg?auto=compress,format",
-        "origin": "Italian"
+        "origin": "Italy"
     },
     {
         "name": "Sushi Platter",
@@ -47,7 +45,7 @@ const menuItems = [
         "description": "Italian pasta dish made with spaghetti, eggs, Parmesan cheese, pancetta, and black pepper.",
         "ingredients": ["spaghetti", "eggs", "Parmesan cheese", "pancetta", "black pepper"],
         "img": "https://lh3.googleusercontent.com/proxy/SA9GbVH7_owZku9WpqQt3Xqw_9AVBGnidOnlvUmS81ZgN9VTQCRvXZREL0CygOYq6T4Kos89WPaSP2OgDARvWEocOihK8lJZ8c4SUTwR5KKeWeC_Dxjp_RDKN29YIvyHKnti",
-        "origin": "Italian"
+        "origin": "Italy"
     },
     {
         "name": "Hamburger",
@@ -55,7 +53,7 @@ const menuItems = [
         "description": "A classic American hamburger served with lettuce, tomato, onions, pickles, and cheese.",
         "ingredients": ["beef patty", "lettuce", "tomato", "onions", "pickles", "cheese", "bun"],
         "img": "https://www.recettesetcabas.com/data/recettes/3330-1-fiche@65B234F0-hamburger-savoyard-a-la-raclette-salade.webp",
-        "origin": "US"
+        "origin": "American"
     },
     {
         "name": "Chicken Curry",
@@ -79,7 +77,7 @@ const menuItems = [
         "description": "A refreshing Italian salad made with fresh tomatoes, mozzarella cheese, basil, and balsamic glaze.",
         "ingredients": ["tomatoes", "mozzarella cheese", "basil", "balsamic glaze"],
         "img": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg",
-        "origin": "Italian"
+        "origin": "Italy"
     },
     {
         "name": "Beef Stir Fry",
@@ -87,7 +85,7 @@ const menuItems = [
         "description": "Tender strips of beef stir-fried with mixed vegetables in a savory sauce.",
         "ingredients": ["beef", "mixed vegetables", "soy sauce", "ginger", "garlic"],
         "img": "https://cdn.momsdish.com/wp-content/uploads/2021/07/Steak-Stir-Fry-Recipe-015.jpg",
-        "origin": "US"
+        "origin": "American"
     },
     {
         "name": "Fettuccine Alfredo",
@@ -95,7 +93,7 @@ const menuItems = [
         "description": "Italian pasta dish made with fettuccine noodles tossed in a creamy Alfredo sauce.",
         "ingredients": ["fettuccine noodles", "cream", "butter", "Parmesan cheese"],
         "img": "https://plantbasedonabudget.com/wp-content/uploads/2020/10/Fettuccine-Alfredo-Plant-Based-on-a-Budget-1-2.jpg",
-        "origin": "Italian"
+        "origin": "Italy"
     },
     {
         "name": "Falafel Wrap",
@@ -119,117 +117,91 @@ const menuItems = [
         "description": "Mexican dish made with grilled chicken, melted cheese, and vegetables folded in a flour tortilla.",
         "ingredients": ["grilled chicken", "cheese", "vegetables", "flour tortilla"],
         "img": "https://gimmedelicious.com/wp-content/uploads/2020/06/Chicken-Quesadilla-sq-1-1.jpg",
-        "origin": "US"
-    },
-        {
-          "name": "Vegan Pesto Pasta",
-          "price_EUR": 10.99,
-          "description": "A vegan version of the classic pesto pasta, made with fresh basil pesto, pine nuts, and sun-dried tomatoes.",
-          "ingredients": ["Pasta", "Fresh basil", "Pine nuts", "Garlic", "Olive oil", "Sun-dried tomatoes"],
-          "img": "https://www.vegolosi.it/wp-content/uploads/2018/01/ricetta-pesto-vegan.jpg",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Curry Rice with Vegetables",
-          "price_EUR": 11.50,
-          "description": "An aromatic and spicy dish of curry rice with mixed vegetables, such as cauliflower, carrots, and peas.",
-          "ingredients": ["Rice", "Curry powder", "Coconut milk", "Cauliflower", "Carrots", "Peas"],
-          "img": "https://www.thespruceeats.com/thmb/pe5pbEoz_VdCfGmRy0cGQgCV-Mo",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Vegan Tofu Stir-Fry",
-          "price_EUR": 12.75,
-          "description": "A flavorful stir-fry dish made with tofu, bell peppers, broccoli, and a savory sauce.",
-          "ingredients": ["Tofu", "Bell peppers", "Broccoli", "Soy sauce", "Garlic", "Ginger"],
-          "img": "https://www.thespruceeats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Hummus and Falafel Plate",
-          "price_EUR": 9.25,
-          "description": "A Middle Eastern-inspired plate with creamy hummus, crispy falafel balls, and fresh salad.",
-          "ingredients": ["Hummus", "Falafel", "Tomatoes", "Cucumbers", "Lettuce", "Tahini sauce"],
-          "img": "https://fooddoodz.tv/assets/images/2020-05-19-Falafel-Wraps",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Vegan Mushroom Risotto",
-          "price_EUR": 13.99,
-          "description": "A creamy and rich risotto made with Arborio rice, mushrooms, vegetable broth, and nutritional yeast.",
-          "ingredients": ["Arborio rice", "Mushrooms", "Vegetable broth", "Onions", "Garlic", "Nutritional yeast"],
-          "img": "https://www.acouplecooks.com/mushroom-risotto",
-          "origin": "Veggie"
-        }
-      
-];
-
-//Function to create a menu item card
-function createMenuItemCard(menuItem) {
-//Create a div element for the card
-const card = document.createElement('div');
-card.classList.add('menu-item');
-
-//create elements for the name, price, description ect.
-const name = document.createElement('h3');
-name.textContent = menuItem.name;
-
-const description = document.createElement('p'); 
-description.textContent = menuItem.description; 
-
-const price = document.createElement('p');
-price.textContent = `Price: €${menuItem.price_EUR.toFixed(2)}`;
-
-const image = document.createElement('img');
-image.src = menuItem.img;
-image.alt = menuItem.name;
-
-const origin = document.createElement('p');
-origin.textContent = menuItem.origin;
-origin.classList.add('origin');
-
-const addToCartButton = document.createElement('button');
-addToCartButton.classList.add('cart');
-addToCartButton.textContent = 'Add to Cart';
-
-//append elements to the card
-card.appendChild(name);
-card.appendChild(price);
-card.appendChild(description);
-card.appendChild(image);
-card.appendChild(addToCartButton);
-card.appendChild(origin);
-
-return card;
-
-
-}
-
-// Function to add menu item cards to the body of the HTML document
-function addMenuItemsToBody(menuItems) {
-// Select the body element
-const body = document.querySelector('body');
-
-// Loop through the menu items and create a card for each one
-menuItems.forEach(menuItem => {
-    // Create a card for the current menu item
-    const menuItemCard = createMenuItemCard(menuItem);
-    // Append the card to the body
-    body.appendChild(menuItemCard);
-});
-}
-
-// Call the function to add menu item cards to the body
-addMenuItemsToBody(menuItems);
-
-
-
-
+        "origin": "American"
+    }
+]
+// GIOVANNI  : Generate cards - OK
 
 
 // CAROLINE :  shopping cart
+let cart = {};
+const main = document.querySelector("main");
+const cartContainer = document.querySelector(".shopping_cart");
 
+function addToCart(item) {
+    if (cart[item["name"]]) {
+        cart[item["name"]].quantity++;
+    }
+    else {
+        cart[item["name"]] = { name: item["name"], quantity: 1 };
+    }
+    showCart();
+}
 
+function removeFromCart(item) {
+    if (cart[item["name"]].quantity == 1) {
+        delete cart[item["name"]];
+    }
+    else {
+        cart[item["name"]].quantity--;
+    }
+    showCart();
+}
+
+function clearCart() {
+    cart = {};
+    showCart();
+}
+
+function showCart() {
+    // resets contents of shopping cart container
+    cartContainer.innerHTML = "";
+    let total = 0;
+    for (let itemName in cart) {
+        const itemObj = menuItems.find(item => item.name === itemName);
+        if (itemObj) {
+            const itemLine = document.createElement("div");
+            itemLine.classList.add("dish");
+            let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
+            itemLine.innerHTML = `
+            <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
+            <span class="dish_name">${itemObj["name"]}</span>
+            <span class="dish_quantity"><button class="remove">-</button>${cart[itemName].quantity}<button class="add">+</button></span>
+            <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
+            `;
+            cartContainer.appendChild(itemLine);
+            total += lineTotal;
+            // Add event listeners to + and - buttons to increase/decrease quantity of item
+            const addButton = itemLine.querySelector(".add");
+            const removeButton = itemLine.querySelector(".remove");
+            addButton.addEventListener("click", () => {
+                addToCart(itemObj);
+            });
+            removeButton.addEventListener("click", () => {
+                removeFromCart(itemObj);
+            });
+        }
+        else {
+            cartContainer.innerHTML = "Your basket is currently empty";
+        }
+    }
+    const totalDiv = document.createElement("div");
+    totalDiv.classList.add("total");
+    totalDiv.innerHTML = `<button class="checkout">Checkout</button><span>€ ${total.toFixed(2)}</span>`
+    const checkoutButton = totalDiv.querySelector("button");
+    checkoutButton.addEventListener("click", (event) => {
+        clearCart();
+        alert("Thanks for your order!");
+    })
+    cartContainer.appendChild(totalDiv);
+    main.appendChild(cartContainer);
+}
+
+addToCart(menuItems[0]);
+addToCart(menuItems[0]);
+addToCart(menuItems[3]);
+addToCart(menuItems[3]);
+addToCart(menuItems[2]);
 
 // Filters
 
