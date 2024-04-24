@@ -77,41 +77,58 @@ header .container i {
   text-align: center;
 }
 
+.cart_modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
 .shopping_cart {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  border: 1px solid grey;
-  margin: 1%;
+  overflow: auto;
 }
 .shopping_cart > div {
-  flex: 10%;
+  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 1%;
+  border: 1px solid pink;
+}
+
+.dish_quantity {
+  display: flex;
+  align-items: center;
 }
 
 .dish {
-  display: flex;
   border-top: 1px solid lightgrey;
 }
 .dish > * {
-  align-self: center;
+  border: 1px solid pink;
 }
 .dish button {
   border: none;
-  background: none;
+  background: lightgrey;
+  margin: 0 2%;
+  padding: 10px;
+  border-radius: 50%;
 }
 .dish button:hover {
   cursor: pointer;
 }
 
 .dish_thumbnail {
-  flex: 15%;
   width: 75px;
   height: 75px;
-}
-
-.dish_quantity {
-  flex: 10%;
 }
 
 .dish_name {
@@ -119,19 +136,11 @@ header .container i {
   flex: 15%;
 }
 
-.line_total {
-  flex: 10%;
-}
-
 .total {
   border-top: 3px solid black;
   font-weight: bold;
   display: flex;
-}
-.total span {
-  flex: 50%;
-  text-align: right;
-  padding-right: 20%;
+  flex-direction: column;
 }
 .total .checkout {
   background-color: rgb(81, 199, 81);
@@ -143,58 +152,115 @@ header .container i {
   border-radius: 25px;
 }
 
-.menu-container section h1 {
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 3vh;
+  box-sizing: border-box;
+}
+.menu-container .menu-item {
+  margin: 7px;
+  flex: 20%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 30vh;
+  max-width: 30vh;
+  min-height: 30vh;
+  max-height: 30vh;
+  border: 1px solid red;
+}
+.menu-container .menu-item > * {
+  border: 1px solid blue;
+  text-align: center;
+}
+.menu-container .menu-item .image-container {
+  max-width: 90%;
+  max-height: 50%;
+}
+.menu-container .menu-item .image-container > img {
+  border: 1px solid red;
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+main section h1 {
   font-family: Berkshire Swash;
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
 }
-.menu-container section ul {
+main section ul {
   padding: 10px;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.menu-container section ul li {
+main section ul li {
   padding: 20px;
 }
 
+.cart_modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
 .shopping_cart {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  border: 1px solid grey;
-  margin: 1%;
+  overflow: auto;
 }
 .shopping_cart > div {
-  flex: 10%;
+  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 1%;
+  border: 1px solid pink;
+}
+
+.dish_quantity {
+  display: flex;
+  align-items: center;
 }
 
 .dish {
-  display: flex;
   border-top: 1px solid lightgrey;
 }
 .dish > * {
-  align-self: center;
+  border: 1px solid pink;
 }
 .dish button {
   border: none;
-  background: none;
+  background: lightgrey;
+  margin: 0 2%;
+  padding: 10px;
+  border-radius: 50%;
 }
 .dish button:hover {
   cursor: pointer;
 }
 
 .dish_thumbnail {
-  flex: 15%;
   width: 75px;
   height: 75px;
-}
-
-.dish_quantity {
-  flex: 10%;
 }
 
 .dish_name {
@@ -202,19 +268,11 @@ header .container i {
   flex: 15%;
 }
 
-.line_total {
-  flex: 10%;
-}
-
 .total {
   border-top: 3px solid black;
   font-weight: bold;
   display: flex;
-}
-.total span {
-  flex: 50%;
-  text-align: right;
-  padding-right: 20%;
+  flex-direction: column;
 }
 .total .checkout {
   background-color: rgb(81, 199, 81);
@@ -224,4 +282,4 @@ header .container i {
   text-align: left;
   border: none;
   border-radius: 25px;
-}
+}/*# sourceMappingURL=style.css.map */

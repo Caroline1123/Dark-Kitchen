@@ -119,94 +119,51 @@ const menuItems = [
         "img": "https://gimmedelicious.com/wp-content/uploads/2020/06/Chicken-Quesadilla-sq-1-1.jpg",
         "origin": "US"
     },
-        {
-          "name": "Vegan Pesto Pasta",
-          "price_EUR": 10.99,
-          "description": "A vegan version of the classic pesto pasta, made with fresh basil pesto, pine nuts, and sun-dried tomatoes.",
-          "ingredients": ["Pasta", "Fresh basil", "Pine nuts", "Garlic", "Olive oil", "Sun-dried tomatoes"],
-          "img": "https://www.vegolosi.it/wp-content/uploads/2018/01/ricetta-pesto-vegan.jpg",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Curry Rice with Vegetables",
-          "price_EUR": 11.50,
-          "description": "An aromatic and spicy dish of curry rice with mixed vegetables, such as cauliflower, carrots, and peas.",
-          "ingredients": ["Rice", "Curry powder", "Coconut milk", "Cauliflower", "Carrots", "Peas"],
-          "img": "https://www.thespruceeats.com/thmb/pe5pbEoz_VdCfGmRy0cGQgCV-Mo",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Vegan Tofu Stir-Fry",
-          "price_EUR": 12.75,
-          "description": "A flavorful stir-fry dish made with tofu, bell peppers, broccoli, and a savory sauce.",
-          "ingredients": ["Tofu", "Bell peppers", "Broccoli", "Soy sauce", "Garlic", "Ginger"],
-          "img": "https://www.thespruceeats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Hummus and Falafel Plate",
-          "price_EUR": 9.25,
-          "description": "A Middle Eastern-inspired plate with creamy hummus, crispy falafel balls, and fresh salad.",
-          "ingredients": ["Hummus", "Falafel", "Tomatoes", "Cucumbers", "Lettuce", "Tahini sauce"],
-          "img": "https://fooddoodz.tv/assets/images/2020-05-19-Falafel-Wraps",
-          "origin": "Veggie"
-        },
-        {
-          "name": "Vegan Mushroom Risotto",
-          "price_EUR": 13.99,
-          "description": "A creamy and rich risotto made with Arborio rice, mushrooms, vegetable broth, and nutritional yeast.",
-          "ingredients": ["Arborio rice", "Mushrooms", "Vegetable broth", "Onions", "Garlic", "Nutritional yeast"],
-          "img": "https://www.acouplecooks.com/mushroom-risotto",
-          "origin": "Veggie"
-        }
-      
+    {
+        "name": "Vegan Pesto Pasta",
+        "price_EUR": 10.99,
+        "description": "A vegan version of the classic pesto pasta, made with fresh basil pesto, pine nuts, and sun-dried tomatoes.",
+        "ingredients": ["Pasta", "Fresh basil", "Pine nuts", "Garlic", "Olive oil", "Sun-dried tomatoes"],
+        "img": "https://www.vegolosi.it/wp-content/uploads/2018/01/ricetta-pesto-vegan.jpg",
+        "origin": "Veggie"
+    },
+    {
+        "name": "Curry Rice with Vegetables",
+        "price_EUR": 11.50,
+        "description": "An aromatic and spicy dish of curry rice with mixed vegetables, such as cauliflower, carrots, and peas.",
+        "ingredients": ["Rice", "Curry powder", "Coconut milk", "Cauliflower", "Carrots", "Peas"],
+        "img": "https://www.thespruceeats.com/thmb/pe5pbEoz_VdCfGmRy0cGQgCV-Mo",
+        "origin": "Veggie"
+    },
+    {
+        "name": "Vegan Tofu Stir-Fry",
+        "price_EUR": 12.75,
+        "description": "A flavorful stir-fry dish made with tofu, bell peppers, broccoli, and a savory sauce.",
+        "ingredients": ["Tofu", "Bell peppers", "Broccoli", "Soy sauce", "Garlic", "Ginger"],
+        "img": "https://www.thespruceeats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok",
+        "origin": "Veggie"
+    },
+    {
+        "name": "Hummus and Falafel Plate",
+        "price_EUR": 9.25,
+        "description": "A Middle Eastern-inspired plate with creamy hummus, crispy falafel balls, and fresh salad.",
+        "ingredients": ["Hummus", "Falafel", "Tomatoes", "Cucumbers", "Lettuce", "Tahini sauce"],
+        "img": "https://fooddoodz.tv/assets/images/2020-05-19-Falafel-Wraps",
+        "origin": "Veggie"
+    },
+    {
+        "name": "Vegan Mushroom Risotto",
+        "price_EUR": 13.99,
+        "description": "A creamy and rich risotto made with Arborio rice, mushrooms, vegetable broth, and nutritional yeast.",
+        "ingredients": ["Arborio rice", "Mushrooms", "Vegetable broth", "Onions", "Garlic", "Nutritional yeast"],
+        "img": "https://www.acouplecooks.com/mushroom-risotto",
+        "origin": "Veggie"
+    }
 ];
-// GIOVANNI  : Generate cards - OK
-//Function to create a menu item card
-function createMenuItemCard(menuItem) {
-    //Create a div element for the card
-    const card = document.createElement('div');
-    card.classList.add('menu-item');
-    
-    //create elements for the name, price, description ect.
-    const name = document.createElement('h3');
-    name.textContent = menuItem.name;
-    
-    const description = document.createElement('p'); 
-    description.textContent = menuItem.description; 
-    
-    const price = document.createElement('p');
-    price.textContent = `Price: €${menuItem.price_EUR.toFixed(2)}`;
-    
-    const image = document.createElement('img');
-    image.src = menuItem.img;
-    image.alt = menuItem.name;
-    
-    const origin = document.createElement('p');
-    origin.textContent = menuItem.origin;
-    origin.classList.add('origin');
-    
-    const addToCartButton = document.createElement('button');
-    addToCartButton.classList.add('cart');
-    addToCartButton.textContent = 'Add to Cart';
-    
-    //append elements to the card
-    card.appendChild(name);
-    card.appendChild(price);
-    card.appendChild(description);
-    card.appendChild(image);
-    card.appendChild(addToCartButton);
-    card.appendChild(origin);
-    
-    return card;
-}
-    
-
 
 // CAROLINE :  shopping cart
 let cart = {};
 const main = document.querySelector("main");
-const cartContainer = document.querySelector(".shopping_cart");
 
 function addToCart(item) {
     if (cart[item["name"]]) {
@@ -232,9 +189,12 @@ function clearCart() {
     cart = {};
     showCart();
 }
+const cartModal = document.querySelector(".cart_modal");
 
 function showCart() {
     // resets contents of shopping cart container
+    const cartContainer = document.createElement("div")
+    cartContainer.classList.add(".shopping_cart");
     cartContainer.innerHTML = "";
     let total = 0;
     if (Object.keys(cart).length === 0) {
@@ -276,9 +236,58 @@ function showCart() {
         alert("Thanks for your order!");
     })
     cartContainer.appendChild(totalDiv);
-    main.appendChild(cartContainer);
+    cartModal.appendChild(cartContainer);
 }
 
+
+// GIOVANNI  : Generate cards - OK
+//Function to create a menu item card
+function createMenuItemCard(menuItem) {
+    //Create a div element for the card
+    const card = document.createElement('div');
+    card.classList.add('menu-item');
+    
+    //create elements for the name, price, description ect.
+    const name = document.createElement('h3');
+    name.textContent = menuItem.name;
+    
+    const description = document.createElement('p'); 
+    description.textContent = menuItem.description; 
+    
+    const price = document.createElement('p');
+    price.textContent = `€ ${menuItem.price_EUR.toFixed(2)}`;
+    
+    const imageContainer = document.createElement('div');
+    const image = document.createElement('img');
+    image.classList.add("image-container");
+    image.src = menuItem.img;
+    image.alt = menuItem.name;
+    imageContainer.appendChild(image);
+    
+    const origin = document.createElement('p');
+    origin.textContent = menuItem.origin;
+    origin.classList.add('origin');
+    
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('cart');
+    addToCartButton.textContent = 'Add to Cart';
+    addToCartButton.addEventListener("click", (event) => {
+        console.log("Click add to cart");
+        addToCart(menuItem);
+    })
+    
+    //append elements to the card
+    card.appendChild(imageContainer);
+    card.appendChild(name);
+    card.appendChild(description);
+    card.appendChild(price);
+    card.appendChild(addToCartButton);
+    // card.appendChild(origin);
+
+    return card;
+}
+
+// Simulate a cart
 addToCart(menuItems[0]);
 addToCart(menuItems[0]);
 addToCart(menuItems[3]);
@@ -316,74 +325,24 @@ filterButtons.forEach(button => {
 // GIOVANNI  : Generate cards
 
 
-
-//Function to create a menu item card
-function createMenuItemCard(menuItem) {
-//Create a div element for the card
-const card = document.createElement('div');
-card.classList.add('menu-item');
-
-//create elements for the name, price, description ect.
-const name = document.createElement('h3');
-name.textContent = menuItem.name;
-
-const description = document.createElement('p'); 
-description.textContent = menuItem.description; 
-
-const price = document.createElement('p');
-price.textContent = `Price: €${menuItem.price_EUR.toFixed(2)}`;
-
-const image = document.createElement('img');
-image.src = menuItem.img;
-image.alt = menuItem.name;
-
-const origin = document.createElement('p');
-origin.textContent = menuItem.origin;
-origin.classList.add('origin');
-
-const addToCartButton = document.createElement('button');
-addToCartButton.classList.add('cart');
-addToCartButton.textContent = 'Add to Cart';
-
-//append elements to the card
-card.appendChild(name);
-card.appendChild(price);
-card.appendChild(description);
-card.appendChild(image);
-card.appendChild(addToCartButton);
-card.appendChild(origin);
-
-return card;
-
-}
-
 // Function to add menu item cards to the body of the HTML document
 function addMenuItemsToBody(menuItems) {
-// Select the body element
-const body = document.querySelector('body');
-
-// Loop through the menu items and create a card for each one
-menuItems.forEach(menuItem => {
-    // Create a card for the current menu item
-    const menuItemCard = createMenuItemCard(menuItem);
-    // Append the card to the body
-    body.appendChild(menuItemCard);
-});
+    // Select the body element
+    const menuContainer = document.querySelector('.menu-container');
+    // Loop through the menu items and create a card for each one
+    menuItems.forEach(menuItem => {
+        // Create a card for the current menu item
+        const menuItemCard = createMenuItemCard(menuItem);
+        // Append the card to the body
+        menuContainer.appendChild(menuItemCard);
+    });
 }
 
 // Call the function to add menu item cards to the body
 addMenuItemsToBody(menuItems);
 
 
-
-
-
-
 // CAROLINE :  shopping cart
-
-
-// Filters
-
 // Function to filter menu items by category
 function filterMenuItems(category) {
     const menuItems = document.querySelectorAll('.menu-item');
@@ -400,21 +359,27 @@ function filterMenuItems(category) {
 }
 
 
-
-
 //TOGGLE DARK MODE
 const icon = document.getElementById("icon");
-const body = document.querySelector("body");
+const container = document.querySelector(".container");
+const body= document.querySelector("body");
 
 
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
         body.classList.remove("dark-theme");
         icon.src = "assets/img/moon.png";
+        container.style.backgroundImage = "url('./assets/img/bg.png')"; // NEW 
     }
     else{
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
-
+        container.style.backgroundImage = "url('./assets/img/bgdark.png')"; // NEW 
     }
 })
+
+// Toggle shopping cart 
+const cartToggle = document.querySelector(".fa-cart-shopping")
+cartToggle.addEventListener("click", (event) => {
+    cartModal.style.display = "block";
+});
