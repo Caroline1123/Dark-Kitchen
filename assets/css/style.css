@@ -174,41 +174,57 @@ main section ul li {
   border-radius: 1px solid red;
 }
 
+.cart_modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 70vw;
+  height: 50vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
 .shopping_cart {
+  margin: 5%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  border: 1px solid grey;
-  margin: 1%;
+  overflow: auto;
 }
 .shopping_cart > div {
-  flex: 10%;
+  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 1%;
+  border: 1px solid pink;
+}
+
+.dish_quantity {
+  display: flex;
+  align-items: center;
 }
 
 .dish {
-  display: flex;
   border-top: 1px solid lightgrey;
 }
 .dish > * {
-  align-self: center;
+  border: 1px solid pink;
 }
 .dish button {
   border: none;
-  background: none;
+  background: lightgrey;
+  margin: 0 2%;
+  padding: 10px;
+  border-radius: 50%;
 }
 .dish button:hover {
   cursor: pointer;
 }
 
 .dish_thumbnail {
-  flex: 15%;
   width: 75px;
   height: 75px;
-}
-
-.dish_quantity {
-  flex: 10%;
 }
 
 .dish_name {
@@ -216,19 +232,11 @@ main section ul li {
   flex: 15%;
 }
 
-.line_total {
-  flex: 10%;
-}
-
 .total {
   border-top: 3px solid black;
   font-weight: bold;
   display: flex;
-}
-.total span {
-  flex: 50%;
-  text-align: right;
-  padding-right: 20%;
+  flex-direction: column;
 }
 .total .checkout {
   background-color: rgb(81, 199, 81);
@@ -239,35 +247,4 @@ main section ul li {
   border: none;
   border-radius: 25px;
 }
-
-.berkshire-swash-regular {
-  font-family: "Berkshire Swash", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-div.menu-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  justify-content: center;
-}
-
-div.menu-item {
-  width: 360px;
-  height: 500px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-img {
-  width: 360px;
-  height: 241px;
-  display: flex;
-  justify-content: center;
-  top: 20px;
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

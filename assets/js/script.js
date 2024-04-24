@@ -312,11 +312,9 @@ function createMenuItemCard(menuItem) {
 }
     
 
-
 // CAROLINE :  shopping cart
 let cart = {};
 const main = document.querySelector("main");
-const cartContainer = document.querySelector(".shopping_cart");
 
 function addToCart(item) {
     if (cart[item["name"]]) {
@@ -342,37 +340,42 @@ function clearCart() {
     cart = {};
     showCart();
 }
+const cartModal = document.querySelector(".cart_modal");
 
 function showCart() {
     // resets contents of shopping cart container
+    const cartContainer = document.createElement("div")
+    cartContainer.classList.add(".shopping_cart");
     cartContainer.innerHTML = "";
     let total = 0;
-    for (let itemName in cart) {
-        const itemObj = menuItems.find(item => item.name === itemName);
-        if (itemObj) {
-            const itemLine = document.createElement("div");
-            itemLine.classList.add("dish");
-            let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
-            itemLine.innerHTML = `
-            <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
-            <span class="dish_name">${itemObj["name"]}</span>
-            <span class="dish_quantity"><button class="remove">-</button>${cart[itemName].quantity}<button class="add">+</button></span>
-            <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
-            `;
-            cartContainer.appendChild(itemLine);
-            total += lineTotal;
-            // Add event listeners to + and - buttons to increase/decrease quantity of item
-            const addButton = itemLine.querySelector(".add");
-            const removeButton = itemLine.querySelector(".remove");
-            addButton.addEventListener("click", () => {
-                addToCart(itemObj);
-            });
-            removeButton.addEventListener("click", () => {
-                removeFromCart(itemObj);
-            });
-        }
-        else {
-            cartContainer.innerHTML = "Your basket is currently empty";
+    if (Object.keys(cart).length === 0) {
+        cartContainer.innerHTML = "Your basket is currently empty";
+    } 
+    else {
+        for (let itemName in cart) {
+            const itemObj = menuItems.find(item => item.name === itemName);
+            if (itemObj) {
+                const itemLine = document.createElement("div");
+                itemLine.classList.add("dish");
+                let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
+                itemLine.innerHTML = `
+                <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
+                <span class="dish_name">${itemObj["name"]}</span>
+                <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
+                <span class="line_total">€ ${lineTotal.toFixed(2)}</span>
+                `;
+                cartContainer.appendChild(itemLine);
+                total += lineTotal;
+                // Add event listeners to + and - buttons to increase/decrease quantity of item
+                const addIcon = itemLine.querySelector(".add");
+                const removeIcon = itemLine.querySelector(".remove");
+                addIcon.addEventListener("click", () => {
+                    addToCart(itemObj);
+                });
+                removeIcon.addEventListener("click", () => {
+                    removeFromCart(itemObj);
+                });
+            }
         }
     }
     const totalDiv = document.createElement("div");
@@ -384,9 +387,58 @@ function showCart() {
         alert("Thanks for your order!");
     })
     cartContainer.appendChild(totalDiv);
-    main.appendChild(cartContainer);
+    cartModal.appendChild(cartContainer);
 }
 
+
+// GIOVANNI  : Generate cards - OK
+//Function to create a menu item card
+function createMenuItemCard(menuItem) {
+    //Create a div element for the card
+    const card = document.createElement('div');
+    card.classList.add('menu-item');
+    
+    //create elements for the name, price, description ect.
+    const name = document.createElement('h3');
+    name.textContent = menuItem.name;
+    
+    const description = document.createElement('p'); 
+    description.textContent = menuItem.description; 
+    
+    const price = document.createElement('p');
+    price.textContent = `€ ${menuItem.price_EUR.toFixed(2)}`;
+    
+    const imageContainer = document.createElement('div');
+    const image = document.createElement('img');
+    image.classList.add("image-container");
+    image.src = menuItem.img;
+    image.alt = menuItem.name;
+    imageContainer.appendChild(image);
+    
+    const origin = document.createElement('p');
+    origin.textContent = menuItem.origin;
+    origin.classList.add('origin');
+    
+    const addToCartButton = document.createElement('button');
+    addToCartButton.classList.add('cart');
+    addToCartButton.textContent = 'Add to Cart';
+    addToCartButton.addEventListener("click", (event) => {
+        console.log("Click add to cart");
+        addToCart(menuItem);
+    })
+    
+    //append elements to the card
+    card.appendChild(imageContainer);
+    card.appendChild(name);
+    card.appendChild(description);
+    card.appendChild(price);
+    card.appendChild(addToCartButton);
+    // card.appendChild(origin);
+
+    return card;
+}
+
+// Simulate a cart
 addToCart(menuItems[0]);
 addToCart(menuItems[0]);
 addToCart(menuItems[3]);
@@ -426,31 +478,23 @@ filterButtons.forEach(button => {
 
 // Function to add menu item cards to the body of the HTML document
 function addMenuItemsToBody(menuItems) {
-// Select the body element
-const menuContainer = document.querySelector('.menu-container');
+  // Select the body element
+  const menuContainer = document.querySelector('.menu-container');
 
-// Loop through the menu items and create a card for each one
-menuItems.forEach(menuItem => {
-    // Create a card for the current menu item
-    const menuItemCard = createMenuItemCard(menuItem);
-    // Append the card to the body
-    menuContainer.appendChild(menuItemCard);
-});
+  // Loop through the menu items and create a card for each one
+  menuItems.forEach(menuItem => {
+      // Create a card for the current menu item
+      const menuItemCard = createMenuItemCard(menuItem);
+      // Append the card to the body
+      menuContainer.appendChild(menuItemCard);
+  });
 }
 
 // Call the function to add menu item cards to the body
 addMenuItemsToBody(menuItems);
 
 
-
-
-
-
 // CAROLINE :  shopping cart
-
-
-// Filters
-
 // Function to filter menu items by category
 function filterMenuItems(category) {
     const menuItems = document.querySelectorAll('.menu-item');
@@ -467,10 +511,9 @@ function filterMenuItems(category) {
 }
 
 
-
-
 //TOGGLE DARK MODE
 const icon = document.getElementById("icon");
+
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
 // const logo = document.querySelector(".logo");
@@ -478,7 +521,6 @@ const logo = document.getElementsByClassName("logo")[0];
 
 
 // console.log(typeof(logo));
-
 
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
@@ -494,3 +536,14 @@ icon.addEventListener("click", (event) => {
         logo.src = "assets/img/logo-dark.svg";
     }
 })
+
+// Toggle shopping cart 
+const cartToggle = document.querySelector(".fa-cart-shopping")
+cartToggle.addEventListener("click", (event) => {
+    if (cartModal.style.display === "block") {
+        cartModal.style.display = "none";
+    }
+    else {
+    cartModal.style.display = "block";
+    }
+});
