@@ -476,6 +476,14 @@ const container = document.querySelector(".container");
 // const logo = document.querySelector(".logo");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
+const footer = document.querySelector("footer");
+// const socials = document.querySelector(".git-icons");
+const footerImage = document.getElementsByClassName("hand")[0];
+// console.log(footerImage);
+const line = document.querySelector(".rectangle");
+console.log(line);
+
+
 
 
 icon.addEventListener("click", (event) => {
@@ -485,6 +493,7 @@ icon.addEventListener("click", (event) => {
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
         cartContainer.classList.remove("dark-theme");
+        footerImage.src = "assets/images/photos/about-light.png";
     }
     else {
         body.classList.add("dark-theme");
@@ -492,5 +501,9 @@ icon.addEventListener("click", (event) => {
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
         cartContainer.classList.add("dark-theme");
+        footer.style.backgroundImage = "url('/assets/images/footer-dark.svg')";
+        // social.classList.add("dark-theme");
+        footerImage.src = "assets/images/photos/about-dark.jpg";
+        line.classList.add("dark-theme");
     }
 })
