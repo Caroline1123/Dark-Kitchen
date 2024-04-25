@@ -256,8 +256,6 @@ const menuItems = [
         "img": "https://img.freepik.com/free-photo/sweet-tart-with-fresh-fruit-cream-generated-by-ai_188544-18152.jpg?t=st=1713964873~exp=1713968473~hmac=182cbdd9d2d307a4a68f4c6a847951727db1ecfe6373ef249cb310cd3a64cf82&w=1800",
         "origin": "Desserts"
     },
-        
-    ];
 
     {
         "name": "Baklava",
