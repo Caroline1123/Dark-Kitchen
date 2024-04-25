@@ -259,6 +259,17 @@ const menuItems = [
         
     ];
 
+    {
+        "name": "Baklava",
+        "price_EUR": 13.99,
+        "description": "A sweet and indulgent pastry made of layers of thin phyllo dough filled with chopped nuts (often pistachios or walnuts), sweetened with syrup or honey, and flavored with spices like cinnamon and cloves.",
+        "ingredients": ["phyllo dough", "nuts (pistachios, walnuts)", "syrup or honey", "spices (cinnamon, cloves)"],
+        "img": "https://img.freepik.com/free-photo/baklava-dessert-with-pistachio-delicious-cuisine_1268-27884.jpg?t=st=1713964910~exp=1713968510~hmac=a4c34d4721badc69ab78b531796474b71abdd0e05903cf9ccd1d945a03f9b66e&w=1480",
+        "origin": "Desserts"
+    }
+];
+
+
 // Creates a menu item card
 function createMenuItemCard(menuItem) {
     // Create a div element for the card
@@ -279,6 +290,8 @@ function createMenuItemCard(menuItem) {
     origin.classList.add('origin');
     
     const addToCartButton = document.createElement('button');
+
+    // Adds event listener to cart button to add one to the cart
     addToCartButton.classList.add('cart');
     addToCartButton.textContent = 'Add';
     addToCartButton.addEventListener('click', () => {
@@ -353,18 +366,28 @@ function removeFromCart(item) {
 }
 
 function clearCart() {
-    cart = {};
-    showCart();
-}
+        cart = {};
+        showCart();
+    }
+
+
 const cartModal = document.querySelector(".cart_modal");
+const cartContainer = document.querySelector(".shopping_cart")
 
 function showCart() {
     // resets contents of shopping cart container
-    const cartContainer = document.querySelector(".shopping_cart")
-    cartContainer.innerHTML = "";
+    cartContainer.innerHTML = `<img id="closeModal" src="./assets/images/close_btn.svg" alt="close cart">`;
     let total = 0;
+    cartContainer.innerHTML += 
+    `<div class="title">
+        <span>Product</span>
+        <span>Quantity</span>
+        <span>Total</span>
+    </div>
+    `;
     if (Object.keys(cart).length === 0) {
-        cartContainer.innerHTML = "Your basket is currently empty";
+        cartContainer.innerHTML += "Your basket is currently empty";
+        cartContainer.classList.add("empty");
     } 
     else {
         for (let itemName in cart) {
@@ -373,11 +396,11 @@ function showCart() {
                 const itemLine = document.createElement("div");
                 itemLine.classList.add("dish");
                 let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
-                itemLine.innerHTML = `
-                <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
-                <span class="dish_name">${itemObj["name"]}</span>
-                <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
-                <span class="line_total">${lineTotal.toFixed(2)} €</span>
+                itemLine.innerHTML = 
+                `
+                    <span class="dish_name">${itemObj["name"]}</span>
+                    <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
+                    <span class="line_total">${lineTotal.toFixed(2)} €</span>
                 `;
                 cartContainer.appendChild(itemLine);
                 total += lineTotal;
@@ -393,27 +416,40 @@ function showCart() {
             }
         }
     }
+    // Close modal
+    const closeModal = document.querySelector("#closeModal");
+    closeModal.addEventListener("click", (event) => {
+        cartModal.style.display = "none";
+    })
     const totalDiv = document.createElement("div");
     totalDiv.classList.add("total");
-    totalDiv.innerHTML = `<span></span><span>${total.toFixed(2)} €</span>
-                        <button class="checkout">Checkout</button>`
-    const checkoutButton = totalDiv.querySelector("button");
-    checkoutButton.addEventListener("click", (event) => {
+    totalDiv.innerHTML += 
+    `   <span><img id="clear" title="Clear Cart" src="./assets/images/icons/trashcan.svg" alt="Clear cart"></span>
+        <span>${total.toFixed(2)} €</span>
+    `;
+
+    
+    const clearBtn = totalDiv.querySelector("#clear");
+    clearBtn.addEventListener("click", (event) => {
         clearCart();
-        alert("Thanks for your order!");
+    })
+    const checkoutButton = document.createElement("div");
+    checkoutButton.innerHTML = `<button class="checkout">Checkout</button>`
+    checkoutButton.addEventListener("click", (event) => {
+        if (Object.keys(cart).length === 0) {
+            alert("Add items to your basket first.");
+        }
+        else {
+            clearCart();
+            alert("Thanks for your order!");
+        }
     })
     cartContainer.appendChild(totalDiv);
+    cartContainer.appendChild(checkoutButton);
     cartModal.appendChild(cartContainer);
 }
 
-// Simulate a cart
-addToCart(menuItems[0]);
-addToCart(menuItems[0]);
-addToCart(menuItems[3]);
-addToCart(menuItems[3]);
-addToCart(menuItems[2]);
-
-// Toggle shopping cart 
+// Toggle shopping cart
 const cartToggle = document.querySelector(".fa-cart-shopping")
 cartToggle.addEventListener("click", (event) => {
     if (cartModal.style.display === "block") {
@@ -424,11 +460,8 @@ cartToggle.addEventListener("click", (event) => {
     }
 });
 
-// Close modal 
-const closeModal = document.querySelector("#closeModal");
-closeModal.addEventListener("click", (event) => {
-    cartModal.style.display = "none";
-})
+showCart();
+
 
 // Add event listeners to filter buttons
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -463,6 +496,15 @@ const menuItems2 = document.querySelectorAll('.menu-item');
 // const logo = document.querySelector(".logo");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
+const footer = document.querySelector("footer");
+// const socials = document.querySelector(".git-icons");
+const footerImage = document.getElementsByClassName("hand")[0];
+// console.log(footerImage);
+const line = document.querySelector(".rectangle");
+console.log(line);
+
+
+
 
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
@@ -474,6 +516,8 @@ icon.addEventListener("click", (event) => {
         menuItems2.forEach(item => {
             item.classList.remove('dark-card');
         })
+        cartContainer.classList.remove("dark-theme");
+        footerImage.src = "assets/images/photos/about-light.png";
     }
     else {
         body.classList.add("dark-theme");
@@ -484,6 +528,12 @@ icon.addEventListener("click", (event) => {
         menuItems2.forEach(item => {
             item.classList.add('dark-card');
         });
+
+        cartContainer.classList.add("dark-theme");
+        footer.style.backgroundImage = "url('/assets/images/footer-dark.svg')";
+        // social.classList.add("dark-theme");
+        footerImage.src = "assets/images/photos/about-dark.jpg";
+        line.classList.add("dark-theme");
     }
 });
 //Animation icons
