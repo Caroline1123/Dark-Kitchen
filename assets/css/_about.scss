@@ -29,6 +29,14 @@
     position: relative;
     transform: translate(0, -90%);
     z-index: -1;
+
+    // .dark-theme {
+    //     color: red;
+    // }
+}
+
+.rectangle.dark-theme {
+    background-color: #3A3C03;
 }
 
 

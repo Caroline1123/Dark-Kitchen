@@ -461,8 +461,8 @@ const footer = document.querySelector("footer");
 // const socials = document.querySelector(".git-icons");
 const footerImage = document.getElementsByClassName("hand")[0];
 // console.log(footerImage);
-const line = document.getElementsByClassName("rectangle");
-// console.log(line);
+const line = document.querySelector(".rectangle");
+console.log(line);
 
 
 
