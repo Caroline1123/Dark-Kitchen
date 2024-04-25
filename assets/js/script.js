@@ -496,6 +496,7 @@ const menuItems2 = document.querySelectorAll('.menu-item');
 // const logo = document.querySelector(".logo");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
+const nav = document.querySelector("nav");
 const footer = document.querySelector("footer");
 // const socials = document.querySelector(".git-icons");
 const footerImage = document.getElementsByClassName("hand")[0];
@@ -505,13 +506,13 @@ console.log(line);
 
 
 
-
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
         body.classList.remove("dark-theme");
         icon.src = "assets/img/moon.png";
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
+        nav.style.backgroundColor = 'white';
         //remove the card's style for dark mode
         menuItems2.forEach(item => {
             item.classList.remove('dark-card');
@@ -524,6 +525,7 @@ icon.addEventListener("click", (event) => {
         icon.src = "assets/img/sun.png";
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
+        nav.style.backgroundColor = 'black';
         //add the card's style for the dark mode
         menuItems2.forEach(item => {
             item.classList.add('dark-card');
