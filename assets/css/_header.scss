@@ -21,24 +21,21 @@ header {
         width: 100%;
         position: fixed;
         top: 0;
-
-
-img.logo{
-    margin-top: 30px;
-    margin-bottom: 30px;
-        width: 50%;
-        height: 70px;
-        justify-content: flex-start;
-
-    }
-    
+        z-index: 10;
+        img.logo{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 50%;
+            height: 70px;
+            justify-content: flex-start;
+        }
+            
     ul {
         width: 100%;
         list-style: none;
         display: flex;
         justify-content: flex-end;
         margin-right: 50px;
-
         #icon {
             width: 25px;
             height: 25px;
@@ -80,3 +77,6 @@ img.logo{
     }
 }
 
+.fa-cart-shopping:hover {
+    transform: scale(110%);
+}

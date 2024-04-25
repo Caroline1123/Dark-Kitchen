@@ -11,9 +11,8 @@
     font-style: normal;
   }
   
- 
 footer {
-    background-image: url("/assets/images/footer-light.svg");
+    background-image: url("./../images/bg-light.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -60,8 +59,7 @@ footer {
 }
     
 .about-picture {
-    
-     position: absolute;
+    position: absolute;
     bottom: 30vh;
     right: 0;
     display: flex;

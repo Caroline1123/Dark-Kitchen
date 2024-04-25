@@ -524,13 +524,14 @@ icon.addEventListener("click", (event) => {
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
         nav.style.backgroundColor = 'black';
+        footer.style.backgroundImage = "url('assets/images/footer-light.svg')";
         //add the card's style for the dark mode
         menuItems2.forEach(item => {
             item.classList.add('dark-card');
         });
 
         cartContainer.classList.add("dark-theme");
-        footer.style.backgroundImage = "url('/assets/images/footer-dark.svg')";
+        footer.style.backgroundImage = "url('assets/images/footer-dark.svg')";
         // social.classList.add("dark-theme");
         footerImage.src = "assets/images/photos/about-dark.jpg";
         line.classList.add("dark-theme");
@@ -541,8 +542,8 @@ const filterButtons1 = document.querySelectorAll('.filter-btn');
 
 // Function to rotate the icon 45 degrees to the right and then to the left
 function rotateIcon(event) {
-  event.target.classList.add('rotate-right');
-  setTimeout(() => {
+    event.target.classList.add('rotate-right');
+    setTimeout(() => {
     event.target.classList.remove('rotate-right');
     event.target.classList.add('rotate-left');
   }, 150); // Waiting time before turning left (in milliseconds)
@@ -550,12 +551,12 @@ function rotateIcon(event) {
 
 // Restore the original rotation when the mouse leaves the icon
 function resetRotation(event) {
-  event.target.classList.remove('rotate-left');
+    event.target.classList.remove('rotate-left');
 }
 
 // Add events to trigger rotations
 filterButtons1.forEach(button => {
-  button.addEventListener('mouseenter', rotateIcon);
-  button.addEventListener('mouseleave', resetRotation);
+    button.addEventListener('mouseenter', rotateIcon);
+    button.addEventListener('mouseleave', resetRotation);
 });
 
