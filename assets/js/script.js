@@ -457,6 +457,7 @@ const container = document.querySelector(".container");
 // const logo = document.querySelector(".logo");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
+const nav = document.querySelector("nav");
 
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
@@ -464,11 +465,13 @@ icon.addEventListener("click", (event) => {
         icon.src = "assets/img/moon.png";
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
+        nav.style.backgroundColor = 'white';
     }
     else {
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
+        nav.style.backgroundColor = 'black';
     }
 })
