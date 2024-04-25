@@ -344,6 +344,8 @@ addMenuItemsToBody(menuItems);
 // CAROLINE : shopping cart
 let cart = {};
 
+showQuantity();
+
 function showQuantity() {
     let itemsNr = 0;
     for (key in cart) {
@@ -440,8 +442,6 @@ function showCart() {
     `   <span><img id="clear" title="Clear Cart" src="./assets/images/icons/trashcan.svg" alt="Clear cart"></span>
         <span>${total.toFixed(2)} €</span>
     `;
-
-    
     const clearBtn = totalDiv.querySelector("#clear");
     clearBtn.addEventListener("click", (event) => {
         clearCart();
