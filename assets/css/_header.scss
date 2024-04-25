@@ -9,7 +9,6 @@ header {
         background-size: cover;
         width: 100%;
         box-sizing: border-box;
-
     nav{
         background-color: $primary-color;
         box-sizing: border-box;
@@ -50,12 +49,15 @@ header {
             padding-top: 20px;
             font-family: Merriweather;
             font-size: 20px;
+            a {
+                text-decoration:none;
+                color:black
+            }
         }
     }
-        } }
+} }
 
 
-        
     h1{
         padding-top: 20vh;
         font-family: Berkshire Swash;
@@ -77,6 +79,24 @@ header {
     }
 }
 
+#count {
+    font-size: 14px;
+    color:white;
+    background-color: #DFEC53;
+    padding:7px 10px;
+    border-radius: 50%;
+}
+
 .fa-cart-shopping:hover {
     transform: scale(110%);
+}
+
+.navigation {
+    color: black;
+    background-color: transparent;
+}
+
+.navigation.dark-theme {
+    color: white;
+    background-color: transparent;
 }

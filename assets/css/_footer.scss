@@ -12,7 +12,7 @@
   }
   
 footer {
-    background-image: url("./../images/bg-light.svg");
+    background-image: url("./../images/footer-light.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -38,10 +38,17 @@ footer {
 
 .git-icons {
     flex: 1; 
-
     > svg {
         padding: 0 5px;   
     }
+}
+
+.git-icons.dark-theme {
+  background-color: transparent;
+  & > svg {
+    filter: invert(1);
+  }
+
 }
 
 .contacts h2 {

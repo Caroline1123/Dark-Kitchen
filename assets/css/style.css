@@ -77,6 +77,10 @@ header .container nav ul li {
   font-family: Merriweather;
   font-size: 20px;
 }
+header .container nav ul li a {
+  text-decoration: none;
+  color: black;
+}
 header h1 {
   padding-top: 20vh;
   font-family: Berkshire Swash;
@@ -94,8 +98,26 @@ header i {
   text-align: center;
 }
 
+#count {
+  font-size: 14px;
+  color: white;
+  background-color: #DFEC53;
+  padding: 7px 10px;
+  border-radius: 50%;
+}
+
 .fa-cart-shopping:hover {
   transform: scale(110%);
+}
+
+.navigation {
+  color: black;
+  background-color: transparent;
+}
+
+.navigation.dark-theme {
+  color: white;
+  background-color: transparent;
 }
 
 div.menu-container {
@@ -326,6 +348,7 @@ main section ul li i {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
 }
 
 .shopping_cart {
@@ -431,9 +454,8 @@ main section ul li i {
   border: none;
   border-radius: 25px;
 }
-
-.shopping_cart:last {
-  border: 1px solid red;
+.checkout:hover {
+  transform: scale(110%);
 }
 
 .shopping_cart.dark-theme {
@@ -466,7 +488,7 @@ main section ul li i {
 }
 
 footer {
-  background-image: url("./../images/bg-light.svg");
+  background-image: url("./../images/footer-light.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -492,6 +514,13 @@ footer {
 }
 .git-icons > svg {
   padding: 0 5px;
+}
+
+.git-icons.dark-theme {
+  background-color: transparent;
+}
+.git-icons.dark-theme > svg {
+  filter: invert(1);
 }
 
 .contacts h2 {

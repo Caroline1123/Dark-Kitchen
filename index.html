@@ -15,15 +15,15 @@
             <div class="shopping_cart">
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="nav">
             <nav>
                 <img src="assets/img/logo-light.svg" class="logo">
-                <ul>
+            <ul>
                 <img src="assets/img/moon.png" id="icon">
-                <li>Home</li>
-                <li>Menu</li>
-                <li>About</li>
-                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><a class="navigation" href="#nav">Home</a></li>
+                <li><a class="navigation" href="#menu">Menu</a></li>
+                <li><a class="navigation" href="#about">About</a></li>
+                <li><i class="fa-solid fa-cart-shopping"><span id="count"></span></i></li>
             </ul>
         </nav>
         <h1>Dark Kitchen</h1>
@@ -33,7 +33,7 @@
     </div>
     </header>
     <main>
-        <section>
+        <section id="menu">
             <h1>Our Menu</h1>
             <ul>
                 <li><i id="Local" class="filter-btn fas fa-map-pin"></i></i></li>
@@ -49,6 +49,7 @@
         
         <div class="menu-container"></div>
     <!-- INFO SECTION (about , menu, shopping cart?, ) -->
+    <span id="about"></span>
     <section class="about">
         <article class="about-text">
             <h2>About us</h2>
@@ -62,16 +63,16 @@
     </main>
     <footer>
         <!-- TASHA -->
-       <div class="contacts">
-           <article class="address">
-               <h2>Dark kitchen</h2>
-               <p>100, Anywere Street,</p>
-               <p>Nowere, Neverland 1000</p>
-           </article>
-           <div class="git-icons">
-               <!-- <img class="socials" src="assets/images/icons/GitHub.svg" alt="GitHub icon">
-               <img class="socials" src="assets/images/icons/Octocat.svg" alt="Octocat icon"> -->
-               <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="contacts">
+            <article class="address">
+                <h2>Dark kitchen</h2>
+                <p>100, Anywere Street,</p>
+                <p>Nowere, Neverland 1000</p>
+            </article>
+            <div class="git-icons">
+                <!-- <img class="socials" src="assets/images/icons/GitHub.svg" alt="GitHub icon">
+                <img class="socials" src="assets/images/icons/Octocat.svg" alt="Octocat icon"> -->
+                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect y="0.00195312" width="45" height="45" fill="url(#pattern0_6922_1544)"/>
                 <defs>
                 <pattern id="pattern0_6922_1544" patternContentUnits="objectBoundingBox" width="1" height="1">

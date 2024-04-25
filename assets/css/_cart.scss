@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.6);
+    z-index: 10;
 }
 
 .shopping_cart {
@@ -111,10 +112,9 @@
     padding: 15px 13px;
     border:none;
     border-radius: 25px;
-}
-
-.shopping_cart:last {
-    border: 1px solid red;
+    &:hover {
+        transform: scale(110%);
+    }
 }
 
 .shopping_cart.dark-theme {
@@ -127,7 +127,6 @@
         border-top : 3px solid white;
     }
 }
-
 
 //responsivity 
 @media (max-width: 700px) {

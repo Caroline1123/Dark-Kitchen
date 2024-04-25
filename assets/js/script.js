@@ -343,6 +343,18 @@ addMenuItemsToBody(menuItems);
 
 // CAROLINE : shopping cart
 let cart = {};
+
+function showQuantity() {
+    let itemsNr = 0;
+    for (key in cart) {
+        if (cart.hasOwnProperty(key)) {
+            itemsNr += cart[key].quantity;
+        }
+    }
+    const count = document.querySelector("#count");
+    count.innerHTML =`${itemsNr}`;
+}
+
 function addToCart(item) {
     if (cart[item["name"]]) {
         cart[item["name"]].quantity++;
@@ -351,6 +363,7 @@ function addToCart(item) {
         cart[item["name"]] = { name: item["name"], quantity: 1 };
     }
     showCart();
+    showQuantity();
 }
 
 function removeFromCart(item) {
@@ -361,12 +374,14 @@ function removeFromCart(item) {
         cart[item["name"]].quantity--;
     }
     showCart();
+    showQuantity();
 }
 
 function clearCart() {
-        cart = {};
-        showCart();
-    }
+    cart = {};
+    showCart();
+    showQuantity();
+}
 
 
 const cartModal = document.querySelector(".cart_modal");
@@ -486,57 +501,6 @@ function filterMenuItems(category) {
     });
 }
 
-// DARK MODE
-const icon = document.getElementById("icon");
-const body = document.querySelector("body");
-const container = document.querySelector(".container");
-const menuItems2 = document.querySelectorAll('.menu-item');
-// const logo = document.querySelector(".logo");
-const logo = document.getElementsByClassName("logo")[0];
-// console.log(typeof(logo));
-const nav = document.querySelector("nav");
-const footer = document.querySelector("footer");
-// const socials = document.querySelector(".git-icons");
-const footerImage = document.getElementsByClassName("hand")[0];
-// console.log(footerImage);
-const line = document.querySelector(".rectangle");
-console.log(line);
-
-
-
-icon.addEventListener("click", (event) => {
-    if(body.classList.contains("dark-theme")){
-        body.classList.remove("dark-theme");
-        icon.src = "assets/img/moon.png";
-        container.style.backgroundImage = "url('assets/images/bg-light.svg')";
-        logo.src = "assets/images/logo-light.svg";
-        nav.style.backgroundColor = 'white';
-        //remove the card's style for dark mode
-        menuItems2.forEach(item => {
-            item.classList.remove('dark-card');
-        })
-        cartContainer.classList.remove("dark-theme");
-        footerImage.src = "assets/images/photos/about-light.png";
-    }
-    else {
-        body.classList.add("dark-theme");
-        icon.src = "assets/img/sun.png";
-        container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
-        logo.src = "assets/images/logo-dark.svg";
-        nav.style.backgroundColor = 'black';
-        footer.style.backgroundImage = "url('assets/images/footer-light.svg')";
-        //add the card's style for the dark mode
-        menuItems2.forEach(item => {
-            item.classList.add('dark-card');
-        });
-
-        cartContainer.classList.add("dark-theme");
-        footer.style.backgroundImage = "url('assets/images/footer-dark.svg')";
-        // social.classList.add("dark-theme");
-        footerImage.src = "assets/images/photos/about-dark.jpg";
-        line.classList.add("dark-theme");
-    }
-});
 //Animation icons
 const filterButtons1 = document.querySelectorAll('.filter-btn');
 
@@ -558,5 +522,62 @@ function resetRotation(event) {
 filterButtons1.forEach(button => {
     button.addEventListener('mouseenter', rotateIcon);
     button.addEventListener('mouseleave', resetRotation);
+});
+
+// DARK MODE
+const icon = document.getElementById("icon");
+const body = document.querySelector("body");
+const container = document.querySelector(".container");
+const menuItems2 = document.querySelectorAll('.menu-item');
+// const logo = document.querySelector(".logo");
+const logo = document.getElementsByClassName("logo")[0];
+// console.log(typeof(logo));
+const nav = document.querySelector("nav");
+const footer = document.querySelector("footer");
+const footerImage = document.getElementsByClassName("hand")[0];
+const line = document.querySelector(".rectangle");
+const gitIcons = document.querySelector(".git-icons");
+let navigation = document.querySelectorAll(".navigation");
+
+
+icon.addEventListener("click", (event) => {
+    if(body.classList.contains("dark-theme")){
+        body.classList.remove("dark-theme");
+        icon.src = "assets/img/moon.png";
+        container.style.backgroundImage = "url('assets/images/bg-light.svg')";
+        logo.src = "assets/images/logo-light.svg";
+        nav.style.backgroundColor = 'white';
+        footer.style.backgroundImage = "url('assets/images/footer-light.svg')";
+        //remove the card's style for dark mode
+        menuItems2.forEach(item => {
+            item.classList.remove('dark-card');
+        })
+        cartContainer.classList.remove("dark-theme");
+        line.classList.remove("dark-theme");
+        footerImage.src = "assets/images/photos/about-light.png";
+        gitIcons.classList.remove("dark-theme");
+        navigation.forEach((element, index) => {
+            element.classList.remove('dark-theme');
+        });
+    }
+    else {
+        body.classList.add("dark-theme");
+        icon.src = "assets/img/sun.png";
+        container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
+        logo.src = "assets/images/logo-dark.svg";
+        nav.style.backgroundColor = 'black';
+        //add the card's style for the dark mode
+        menuItems2.forEach(item => {
+            item.classList.add('dark-card');
+        });
+        cartContainer.classList.add("dark-theme");
+        footer.style.backgroundImage = "url('assets/images/footer-dark.svg')";
+        footerImage.src = "assets/images/photos/about-dark.jpg";
+        line.classList.add("dark-theme");
+        gitIcons.classList.add("dark-theme");
+        navigation.forEach((element, index) => {
+            element.classList.add('dark-theme');
+        });
+    }
 });
 
