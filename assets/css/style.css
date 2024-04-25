@@ -215,4 +215,15 @@ main section ul li i {
 }
 .total span:first-of-type {
   flex: 3;
+}
+
+.cart_modal.dark-theme {
+  color: white;
+  background-color: black;
+}
+.cart_modal.dark-theme #closeModal {
+  filter: invert(1);
+}
+.cart_modal.dark-theme .total {
+  border-top: 3px solid white;
 }/*# sourceMappingURL=style.css.map */

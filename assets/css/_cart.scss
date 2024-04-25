@@ -89,3 +89,14 @@
         flex:3;
     }
 }
+
+.cart_modal.dark-theme {
+        color : white;
+        background-color: black;
+    #closeModal {
+        filter: invert(1);
+    }
+    .total  {
+        border-top : 3px solid white;
+    }
+}

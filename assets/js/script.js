@@ -264,8 +264,7 @@ const menuItems = [
         "img": "https://img.freepik.com/free-photo/baklava-dessert-with-pistachio-delicious-cuisine_1268-27884.jpg?t=st=1713964910~exp=1713968510~hmac=a4c34d4721badc69ab78b531796474b71abdd0e05903cf9ccd1d945a03f9b66e&w=1480",
         "origin": "Desserts"
     }
-        
-    ];
+];
 
 //Creates a menu item card
 function createMenuItemCard(menuItem) {
@@ -292,7 +291,7 @@ function createMenuItemCard(menuItem) {
     origin.classList.add('origin');
     
     const addToCartButton = document.createElement('button');
-    // adds event listener to cart button to add one to the cart
+    // Adds event listener to cart button to add one to the cart
     addToCartButton.classList.add('cart');
     addToCartButton.textContent = 'Add to Cart';
     addToCartButton.addEventListener('click',() => {
@@ -458,17 +457,20 @@ const container = document.querySelector(".container");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
 
+
 icon.addEventListener("click", (event) => {
     if(body.classList.contains("dark-theme")){
         body.classList.remove("dark-theme");
         icon.src = "assets/img/moon.png";
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
+        cartModal.classList.remove("dark-theme");
     }
     else {
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
+        cartModal.classList.add("dark-theme");
     }
 })
