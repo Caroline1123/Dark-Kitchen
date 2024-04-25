@@ -348,18 +348,28 @@ function removeFromCart(item) {
 }
 
 function clearCart() {
-    cart = {};
-    showCart();
-}
+        cart = {};
+        showCart();
+    }
+
+
 const cartModal = document.querySelector(".cart_modal");
+const cartContainer = document.querySelector(".shopping_cart")
 
 function showCart() {
     // resets contents of shopping cart container
-    const cartContainer = document.querySelector(".shopping_cart")
-    cartContainer.innerHTML = "";
+    cartContainer.innerHTML = `<img id="closeModal" src="./assets/images/close_btn.svg" alt="close cart">`;
     let total = 0;
+    cartContainer.innerHTML += 
+    `<div class="title">
+        <span>Product</span>
+        <span>Quantity</span>
+        <span>Total</span>
+    </div>
+    `;
     if (Object.keys(cart).length === 0) {
-        cartContainer.innerHTML = "Your basket is currently empty";
+        cartContainer.innerHTML += "Your basket is currently empty";
+        cartContainer.classList.add("empty");
     } 
     else {
         for (let itemName in cart) {
@@ -368,11 +378,11 @@ function showCart() {
                 const itemLine = document.createElement("div");
                 itemLine.classList.add("dish");
                 let lineTotal = itemObj["price_EUR"] * cart[itemName].quantity;
-                itemLine.innerHTML = `
-                <span><img class="dish_thumbnail" src=${itemObj["img"]} alt=${itemObj["name"]}></span>
-                <span class="dish_name">${itemObj["name"]}</span>
-                <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
-                <span class="line_total">${lineTotal.toFixed(2)} €</span>
+                itemLine.innerHTML = 
+                `
+                    <span class="dish_name">${itemObj["name"]}</span>
+                    <span class="dish_quantity"><img class="remove" src="./assets/images/minus.svg">${cart[itemName].quantity}<img class="add" src="./assets/images/plus.svg"></span>
+                    <span class="line_total">${lineTotal.toFixed(2)} €</span>
                 `;
                 cartContainer.appendChild(itemLine);
                 total += lineTotal;
@@ -388,10 +398,22 @@ function showCart() {
             }
         }
     }
+    // Close modal
+    const closeModal = document.querySelector("#closeModal");
+    closeModal.addEventListener("click", (event) => {
+        cartModal.style.display = "none";
+    })
     const totalDiv = document.createElement("div");
     totalDiv.classList.add("total");
-    totalDiv.innerHTML = `<span></span><span>${total.toFixed(2)} €</span>
-                        <button class="checkout">Checkout</button>`
+    totalDiv.innerHTML += 
+    `   <span><img id="clear" title="Clear Cart" src="./assets/images/icons/trashcan.svg" alt="Clear cart"></span>
+        <span><button class="checkout">Checkout</button></span>
+        <span>${total.toFixed(2)} €</span>
+    `;
+    const clearBtn = totalDiv.querySelector("#clear");
+    clearBtn.addEventListener("click", (event) => {
+        clearCart();
+    })
     const checkoutButton = totalDiv.querySelector("button");
     checkoutButton.addEventListener("click", (event) => {
         clearCart();
@@ -401,14 +423,14 @@ function showCart() {
     cartModal.appendChild(cartContainer);
 }
 
-// Simulate a cart
+// Simulates a cart
 addToCart(menuItems[0]);
 addToCart(menuItems[0]);
 addToCart(menuItems[3]);
 addToCart(menuItems[3]);
 addToCart(menuItems[2]);
 
-// Toggle shopping cart 
+// Toggle shopping cart
 const cartToggle = document.querySelector(".fa-cart-shopping")
 cartToggle.addEventListener("click", (event) => {
     if (cartModal.style.display === "block") {
@@ -419,11 +441,6 @@ cartToggle.addEventListener("click", (event) => {
     }
 });
 
-// Close modal 
-const closeModal = document.querySelector("#closeModal");
-closeModal.addEventListener("click", (event) => {
-    cartModal.style.display = "none";
-})
 
 // Add event listeners to filter buttons
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -464,13 +481,13 @@ icon.addEventListener("click", (event) => {
         icon.src = "assets/img/moon.png";
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
-        cartModal.classList.remove("dark-theme");
+        cartContainer.classList.remove("dark-theme");
     }
     else {
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
-        cartModal.classList.add("dark-theme");
+        cartContainer.classList.add("dark-theme");
     }
 })
