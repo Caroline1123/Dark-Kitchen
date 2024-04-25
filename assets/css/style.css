@@ -288,17 +288,11 @@ footer {
   top: 70vh;
 }
 
-.git-icons {
-  flex: 1;
-}
-.git-icons > svg {
-  padding: 0 5px;
-}
-
 .contacts h2 {
   font-family: "Berkshire Swash", serif;
   font-weight: 400;
   font-size: 2em;
+  letter-spacing: 0.07em;
   padding: 5px 0;
 }
 
@@ -320,4 +314,8 @@ footer {
 .about-picture img {
   height: 100%;
   width: 100%;
+}
+
+.socials.dark-theme {
+  filter: invert(1);
 }/*# sourceMappingURL=style.css.map */

@@ -37,18 +37,19 @@ footer {
     top: 70vh;
 }
 
-.git-icons {
-    flex: 1; 
+// .git-icons {
+//     flex: 1; 
 
-    > svg {
-        padding: 0 5px;   
-    }
-}
+//     > svg {
+//         padding: 0 5px;   
+//     }
+// }
 
 .contacts h2 {
     font-family: "Berkshire Swash", serif;
     font-weight: 400;
     font-size: 2em;
+    letter-spacing: .07em;
     padding: 5px 0;
 }
 
@@ -73,6 +74,9 @@ footer {
   }
 }
 
+.socials.dark-theme {
+  filter: invert(1);
+}
 
 
 

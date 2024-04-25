@@ -462,7 +462,9 @@ const footer = document.querySelector("footer");
 const footerImage = document.getElementsByClassName("hand")[0];
 // console.log(footerImage);
 const line = document.querySelector(".rectangle");
-console.log(line);
+// console.log(line);
+const gitIcon = document.querySelectorAll(".socials");
+console.log(gitIcon);
 
 
 
@@ -483,8 +485,7 @@ icon.addEventListener("click", (event) => {
         // social.classList.add("dark-theme");
         footerImage.src = "assets/images/photos/about-dark.jpg";
         line.classList.add("dark-theme");
-        
-        
+        gitIcon.classList.add("dark-theme");     
         
     }
 })
