@@ -12,7 +12,7 @@ const menuItems = [
         "price_EUR": 9.99,
         "description": "A classic Italian pizza topped with tomato sauce, mozzarella cheese, and fresh basil.",
         "ingredients": ["tomato sauce", "mozzarella cheese", "basil"],
-        "img": "https://www.freepik.com/free-ai-image/close-up-delicious-pizza_60175657.htm#fromView=search&page=1&position=1&uuid=f07bf502-53b1-48e8-88ef-8367e4f7243f",
+        "img": "https://img.freepik.com/free-photo/close-up-delicious-pizza_23-2150702795.jpg?t=st=1714044175~exp=1714047775~hmac=2b5472444741bc19f7f2630a35abcf3cee9e9408b9246494751870e808429bb1&w=1380",
         "origin": "Italian"
     },
     {
@@ -20,7 +20,7 @@ const menuItems = [
         "price_EUR": 18.75,
         "description": "Assorted sushi rolls including tuna, salmon, California rolls, and avocado rolls.",
         "ingredients": ["rice", "fish (tuna, salmon)", "avocado", "seaweed", "soy sauce"],
-        "img": "https://www.freepik.com/free-ai-image/freshness-plate-seafood-sashimi-nigiri-maki-sushi-healthy-eating-generated-by-artificial-intelligence_80047878.htm#fromView=search&page=1&position=5&uuid=2c273bb6-d84c-450c-9cb7-3017a70edd55",
+        "img": "https://img.freepik.com/free-photo/freshness-plate-seafood-sashimi-nigiri-maki-sushi-healthy-eating-generated-by-artificial-intelligence_25030-65638.jpg?t=st=1714044206~exp=1714047806~hmac=5dc01ba454e55673111a1334272624c2ed91dec11190dabd1b51f945cc97620c&w=1380",
         "origin": "Asian"
     },
     {
@@ -36,7 +36,7 @@ const menuItems = [
         "price_EUR": 10.50,
         "description": "Mexican tacos filled with marinated pork, pineapple, onions, and cilantro.",
         "ingredients": ["marinated pork", "pineapple", "onions", "cilantro", "tortillas"],
-        "img": "https://www.freepik.com/free-ai-image/close-up-delicious-tacos_69798388.htm#fromView=search&page=1&position=2&uuid=fed284bf-2b95-495e-bea2-547678c46d03",
+        "img": "https://img.freepik.com/free-photo/delicious-tacos-arrangement_23-2150878201.jpg?t=st=1714044239~exp=1714047839~hmac=a873b4d92942570af9610779295ab17e5e19bb7458a8138f95eb6d7caa783ac0&w=740",
         "origin": "Mexico"
     },
     {
@@ -168,12 +168,12 @@ const menuItems = [
         "origin": "Local"
     },
     {
-            "name": "Mussels with Frites",
-            "price_EUR": 14.99,
-            "description": "A beloved Belgian dish featuring fresh mussels steamed in a flavorful broth of white wine, garlic, and herbs, served with crispy fries.",
-            "ingredients": ["mussels", "white wine", "garlic", "shallots", "butter", "parsley", "potatoes"],
-            "img": "https://img.freepik.com/free-photo/high-angle-delicious-oysters-arrangement_23-2150301976.jpg?t=st=1713960708~exp=1713964308~hmac=09b21c7b2c205786c51c42aafa31cb7ec95e18159ee097e787e06a543ca9f2c5&w=1380",
-            "origin": "Local"
+        "name": "Mussels with Frites",
+        "price_EUR": 14.99,
+        "description": "A beloved Belgian dish featuring fresh mussels steamed in a flavorful broth of white wine, garlic, and herbs, served with crispy fries.",
+        "ingredients": ["mussels", "white wine", "garlic", "shallots", "butter", "parsley", "potatoes"],
+        "img": "https://img.freepik.com/free-photo/high-angle-delicious-oysters-arrangement_23-2150301976.jpg?t=st=1713960708~exp=1713964308~hmac=09b21c7b2c205786c51c42aafa31cb7ec95e18159ee097e787e06a543ca9f2c5&w=1380",
+        "origin": "Local"
     },
     {
         "name": "Stoofvlees (Flemish Beef Stew)",
@@ -203,7 +203,7 @@ const menuItems = [
     {
         "name": "Shawarma",
         "price_EUR": 12.50,
-        "description": "A popular Middle Eastern street food, shawarma features thinly sliced marinated meat (usually chicken, beef, or lamb) wrapped in pita bread with tahini sauce, vegetables, and pickles.",
+        "description": "A popular Middle Eastern street food, shawarma features thinly sliced marinated meat (usually chicken, beef, or lamb) wrapped in pita.",
         "ingredients": ["marinated meat (chicken, beef, lamb)", "pita bread", "tahini sauce", "vegetables", "pickles"],
         "img": "https://img.freepik.com/free-photo/burrito-with-meat-vegetables-it_188544-16138.jpg?t=st=1713960967~exp=1713964567~hmac=2c2af6bea85628b22c7f90046ff3ca224503eab2ba6b471ad9b74a672efdb606&w=1380",
         "origin": "Arab"
@@ -211,7 +211,7 @@ const menuItems = [
     {
         "name": "Baklava",
         "price_EUR": 8.99,
-        "description": "A sweet and indulgent pastry made of layers of thin phyllo dough filled with chopped nuts (often pistachios or walnuts), sweetened with syrup or honey, and flavored with spices like cinnamon and cloves.",
+        "description": "A sweet and indulgent pastry made of layers of thin phyllo.",
         "ingredients": ["phyllo dough", "nuts (pistachios, walnuts)", "syrup or honey", "spices (cinnamon, cloves)"],
         "img": "https://img.freepik.com/free-photo/baked-baklava-slice-with-honey-walnuts-generated-by-ai_188544-53866.jpg?t=st=1713960997~exp=1713964597~hmac=f9e1391d89113af27f9322b08ddf248932d04a90d57528143f85bbb2b5b2c50d&w=1380",
         "origin": "Arab"
@@ -256,59 +256,63 @@ const menuItems = [
         "img": "https://img.freepik.com/free-photo/sweet-tart-with-fresh-fruit-cream-generated-by-ai_188544-18152.jpg?t=st=1713964873~exp=1713968473~hmac=182cbdd9d2d307a4a68f4c6a847951727db1ecfe6373ef249cb310cd3a64cf82&w=1800",
         "origin": "Desserts"
     },
-    {
-        "name": "Baklava",
-        "price_EUR": 13.99,
-        "description": "A sweet and indulgent pastry made of layers of thin phyllo dough filled with chopped nuts (often pistachios or walnuts), sweetened with syrup or honey, and flavored with spices like cinnamon and cloves.",
-        "ingredients": ["phyllo dough", "nuts (pistachios, walnuts)", "syrup or honey", "spices (cinnamon, cloves)"],
-        "img": "https://img.freepik.com/free-photo/baklava-dessert-with-pistachio-delicious-cuisine_1268-27884.jpg?t=st=1713964910~exp=1713968510~hmac=a4c34d4721badc69ab78b531796474b71abdd0e05903cf9ccd1d945a03f9b66e&w=1480",
-        "origin": "Desserts"
-    }
         
     ];
 
-//Creates a menu item card
+// Creates a menu item card
 function createMenuItemCard(menuItem) {
-    //Create a div element for the card
+    // Create a div element for the card
     const card = document.createElement('div');
     card.classList.add('menu-item');
     
-    //create elements for the name, price, description ect.
-    const name = document.createElement('h3');
-    name.textContent = menuItem.name;
+    // Create a div specifically for price, origin, and the "Add to Cart" button
+    const detailsContainer = document.createElement('div');
+    detailsContainer.classList.add('details-container');
     
-    const description = document.createElement('p'); 
-    description.textContent = menuItem.description; 
-    
+    // Create elements for price, origin, and "Add to Cart" button
     const price = document.createElement('p');
-    price.textContent = `Price: €${menuItem.price_EUR.toFixed(2)}`;
-    
-    const image = document.createElement('img');
-    image.src = menuItem.img;
-    image.alt = menuItem.name;
+    price.textContent = `€${menuItem.price_EUR.toFixed(2)}`;
+    price.classList.add('price'); // Add class to price
     
     const origin = document.createElement('p');
     origin.textContent = menuItem.origin;
     origin.classList.add('origin');
     
     const addToCartButton = document.createElement('button');
-    // adds event listener to cart button to add one to the cart
     addToCartButton.classList.add('cart');
-    addToCartButton.textContent = 'Add to Cart';
-    addToCartButton.addEventListener('click',() => {
+    addToCartButton.textContent = 'Add';
+    addToCartButton.addEventListener('click', () => {
         addToCart(menuItem);
-    })
+    });
     
-    //append elements to the card
+    // Append price, origin, and "Add to Cart" button to detailsContainer
+    detailsContainer.appendChild(price);
+    detailsContainer.appendChild(origin);
+    detailsContainer.appendChild(addToCartButton);
+    
+    // Create elements for image, name, and description
+    const image = document.createElement('img');
+    image.src = menuItem.img;
+    image.alt = menuItem.name;
+    
+    const name = document.createElement('h3');
+    name.textContent = menuItem.name;
+    
+    const description = document.createElement('p'); 
+    description.textContent = menuItem.description; 
+    description.classList.add('description'); // Add class to description
+    
+    // Append image, name, and description to the card
     card.appendChild(image);
     card.appendChild(name);
     card.appendChild(description);
-    card.appendChild(addToCartButton);
-    card.appendChild(origin);
-    card.appendChild(price);
+    
+    // Append detailsContainer to the card
+    card.appendChild(detailsContainer);
     
     return card;
 }
+
     
 // Function to add menu item cards to the body of the HTML document
 function addMenuItemsToBody(menuItems) {
@@ -435,7 +439,6 @@ filterButtons.forEach(button => {
     });
 });
 
-// Function to filter menu items by category
 function filterMenuItems(category) {
     const menuItems = document.querySelectorAll('.menu-item');
     menuItems.forEach(item => {
@@ -444,8 +447,10 @@ function filterMenuItems(category) {
         // Show or hide the menu item based on the category
         if (category === 'all' || origin === category) {
             item.style.display = 'block';
+            item.classList.add('filtered-itemé');
         } else {
             item.style.display = 'none';
+            item.classList.remove('filterd-item');
         }
     });
 }
@@ -454,6 +459,7 @@ function filterMenuItems(category) {
 const icon = document.getElementById("icon");
 const body = document.querySelector("body");
 const container = document.querySelector(".container");
+const menuItems2 = document.querySelectorAll('.menu-item');
 // const logo = document.querySelector(".logo");
 const logo = document.getElementsByClassName("logo")[0];
 // console.log(typeof(logo));
@@ -464,11 +470,42 @@ icon.addEventListener("click", (event) => {
         icon.src = "assets/img/moon.png";
         container.style.backgroundImage = "url('assets/images/bg-light.svg')";
         logo.src = "assets/images/logo-light.svg";
+        //remove the card's style for dark mode
+        menuItems2.forEach(item => {
+            item.classList.remove('dark-card');
+        })
     }
     else {
         body.classList.add("dark-theme");
         icon.src = "assets/img/sun.png";
         container.style.backgroundImage = "url('assets/images/bg-dark.svg')"; 
         logo.src = "assets/images/logo-dark.svg";
+        //add the card's style for the dark mode
+        menuItems2.forEach(item => {
+            item.classList.add('dark-card');
+        });
     }
-})
+});
+//Animation icons
+const filterButtons1 = document.querySelectorAll('.filter-btn');
+
+// Function to rotate the icon 45 degrees to the right and then to the left
+function rotateIcon(event) {
+  event.target.classList.add('rotate-right');
+  setTimeout(() => {
+    event.target.classList.remove('rotate-right');
+    event.target.classList.add('rotate-left');
+  }, 150); // Waiting time before turning left (in milliseconds)
+}
+
+// Restore the original rotation when the mouse leaves the icon
+function resetRotation(event) {
+  event.target.classList.remove('rotate-left');
+}
+
+// Add events to trigger rotations
+filterButtons1.forEach(button => {
+  button.addEventListener('mouseenter', rotateIcon);
+  button.addEventListener('mouseleave', resetRotation);
+});
+
