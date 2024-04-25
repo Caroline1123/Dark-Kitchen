@@ -407,28 +407,29 @@ function showCart() {
     totalDiv.classList.add("total");
     totalDiv.innerHTML += 
     `   <span><img id="clear" title="Clear Cart" src="./assets/images/icons/trashcan.svg" alt="Clear cart"></span>
-        <span><button class="checkout">Checkout</button></span>
         <span>${total.toFixed(2)} €</span>
     `;
+
+    
     const clearBtn = totalDiv.querySelector("#clear");
     clearBtn.addEventListener("click", (event) => {
         clearCart();
     })
-    const checkoutButton = totalDiv.querySelector("button");
+    const checkoutButton = document.createElement("div");
+    checkoutButton.innerHTML = `<button class="checkout">Checkout</button>`
     checkoutButton.addEventListener("click", (event) => {
-        clearCart();
-        alert("Thanks for your order!");
+        if (Object.keys(cart).length === 0) {
+            alert("Add items to your basket first.");
+        }
+        else {
+            clearCart();
+            alert("Thanks for your order!");
+        }
     })
     cartContainer.appendChild(totalDiv);
+    cartContainer.appendChild(checkoutButton);
     cartModal.appendChild(cartContainer);
 }
-
-// Simulates a cart
-addToCart(menuItems[0]);
-addToCart(menuItems[0]);
-addToCart(menuItems[3]);
-addToCart(menuItems[3]);
-addToCart(menuItems[2]);
 
 // Toggle shopping cart
 const cartToggle = document.querySelector(".fa-cart-shopping")
@@ -440,6 +441,8 @@ cartToggle.addEventListener("click", (event) => {
         cartModal.style.display = "block";
     }
 });
+
+showCart();
 
 
 // Add event listeners to filter buttons

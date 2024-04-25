@@ -20,7 +20,6 @@
     min-height: 50vh;
     max-height: 50vh;
     align-content:center;
-    // justify-content: center;
     border-style: ridge;
     background-color: white;
     position: absolute;
@@ -43,7 +42,6 @@
         display:flex;
         justify-content: center;
         padding : 1%;
-        // border-bottom: 1px solid lightgrey;
         > span {
             flex: 1;
             text-align: center;
@@ -95,20 +93,28 @@
     border-top: 3px solid black;
     font-weight: bold;
     font-size: 18px;
-    .checkout {
-        text-justify: center;
-        background-color: rgb(81, 199, 81);
-        color:white;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 15px 13px;
-        border:none;
-        border-radius: 25px;
+    span {
+        width: 50%;
     }
     span > img {
         width: 40px;
         height: 40px;
     }
+}
+
+.checkout {
+    text-align: right;
+    font-size: 18px;
+    background-color: rgb(130, 212, 130);
+    color:white;
+    font-weight: bold;
+    padding: 15px 13px;
+    border:none;
+    border-radius: 25px;
+}
+
+.shopping_cart:last {
+    border: 1px solid red;
 }
 
 .shopping_cart.dark-theme {
