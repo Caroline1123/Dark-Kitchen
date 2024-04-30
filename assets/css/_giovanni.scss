@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Carrois+Gothic&family=Nanum+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-$primary-color: #DFEC53;
-$button-padding: 5px 10px;
-$button-border-radius: 10px;
-$button-font-size: 16px;
 
 
 div.menu-container {
@@ -12,10 +8,8 @@ div.menu-container {
   gap: 40px; 
   justify-content: center;
   min-height: 600px;
-
+  width : 100%;
 }
-
-
 
 div.menu-item {
     width: 360px;
@@ -34,15 +28,11 @@ div.menu-item {
       transition: transform 0.3s ease;
       transition: border-color 0.9 ease;
     }
-    
-
     h3{
     
       font-family: Berkshire Swash;
       font-size: 20px;
       margin-left: 30px;
-  
-  
     }
     p.description {
       font-family: Barlow;
@@ -54,49 +44,41 @@ div.menu-item {
       margin-right: 15px;
       font-size: 18px;
       letter-spacing: 1px;
-   }
-   
-  img {
-    width: 300px;
-    height: 241px;
-    display: flex;
-    justify-content: center;
-    margin-left: 30px;
-    margin-top: 30px;
-  }
-  
-    
-button.cart {
-  margin-right: 35px;
-  min-width: 60px;
-  display: flex;
-  padding: $button-padding;
-  border: none;
-  border-radius: $button-border-radius;
-  background-color: $primary-color;
-  color: white;
-  font-size: $button-font-size;
-  text-decoration: none;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
+    }
+    img {
+      width: 300px;
+      height: 241px;
+      display: flex;
+      justify-content: center;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+    button.cart {
+      margin-right: 35px;
+      min-width: 60px;
+      display: flex;
+      padding: $button-padding;
+      border: none;
+      border-radius: $button-border-radius;
+      background-color: $yellowish;
+      color: white;
+      font-size: $button-font-size;
+      text-decoration: none;
+      text-align: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: darken($yellowish, 10%);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+    }
 }
-
-
-  }
 
 div.details-container {
   display: flex;
@@ -117,12 +99,7 @@ div.details-container {
     display: none;
   }
 }
-div.menu-item.dark-card {
-  background-color: #333; 
-  color: white; 
-  box-shadow: 1px 1px 60px rgba(128, 128, 128, 1); 
-  border: 1px solid black;
-}
+
 div.menu-item.filtered-itemé{
 
   h3{

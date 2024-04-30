@@ -1,71 +1,75 @@
 header {
     width: 100%;
-    height: 70vh;
-    
-    .container {
-        height: 100%;
-        background-image: url("./../images/bg-light.svg");
-        background-position: center;
-        background-size: cover;
-        width: 100%;
-        box-sizing: border-box;
-    nav{
-        background-color: $primary-color;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-between;
-        padding: 50px;
-        align-items: center;
-        height: 50px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        z-index: 10;
-        img.logo{
-            margin-top: 30px;
-            margin-bottom: 30px;
-            width: 50%;
-            height: 70px;
-            justify-content: flex-start;
-        }
-            
-    ul {
-        width: 100%;
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 50px;
-        #icon {
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 20px;
-        }
-        li {
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 20px;
-            font-family: Merriweather;
-            font-size: 20px;
-            a {
-                text-decoration:none;
-                color:black
-            }
+    height: 70vh;    
+}
+
+.container {
+    height: 100%;
+    width: 100vw;
+    background-image: url("./../images/bg-light.svg");
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+}
+nav {
+    background-color: $primary-color;
+    height: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+    // padding: 6vh 6vw;
+    top: 0;
+    z-index: 10;
+}
+
+img.logo{
+    flex:15%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: auto;
+    height: 8vh;
+    justify-content: flex-start;
+}
+
+ul {
+    flex:85%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+#icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    padding : 4% 3%;
+}
+
+ul {
+    li {
+        padding : 4% 3%;
+        font-family: Merriweather;
+        font-size: 20px;
+        a {
+            text-decoration:none;
+            color:black
         }
     }
-} }
+}
 
 
-    h1{
-        padding-top: 20vh;
-        font-family: Berkshire Swash;
-        font-size: 5vh;
-        font-weight: 700;
-        text-align: center;
-    }
+h1{
+    padding-top: 20vh;
+    font-family: Berkshire Swash;
+    font-size: 5vh;
+    font-weight: 700;
+    text-align: center;
+}
 
+header {
     p{
         text-align: center;
         font-family: Merriweather;
@@ -82,7 +86,7 @@ header {
 #count {
     font-size: 14px;
     color:white;
-    background-color: #DFEC53;
+    background-color: $yellowish;
     padding:7px 10px;
     border-radius: 50%;
 }
@@ -93,10 +97,5 @@ header {
 
 .navigation {
     color: black;
-    background-color: transparent;
-}
-
-.navigation.dark-theme {
-    color: white;
     background-color: transparent;
 }
