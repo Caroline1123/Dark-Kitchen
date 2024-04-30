@@ -1,0 +1,38 @@
+.dark-theme {
+    background-color: $secondary-color;
+    color: $primary-color;
+}
+
+.navigation.dark-theme {
+    color: white;
+    background-color: transparent;
+}
+
+.shopping_cart.dark-theme {
+    color : white;
+    background-color: rgb(57, 57, 57);
+    #closeModal {
+        filter: invert(1);
+    }
+    .total  {
+        border-top : 3px solid white;
+    }
+}
+
+div.menu-item.dark-card {
+    background-color: #333; 
+    color: white; 
+    box-shadow: 1px 1px 60px rgba(128, 128, 128, 1); 
+    border: 1px solid black;
+}
+
+.rectangle.dark-theme {
+    background-color: #3A3C03;
+}
+
+.git-icons.dark-theme {
+    background-color: transparent;
+    & > svg {
+    filter: invert(1);
+    }
+}

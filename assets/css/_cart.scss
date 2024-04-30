@@ -117,17 +117,6 @@
     }
 }
 
-.shopping_cart.dark-theme {
-        color : white;
-        background-color: rgb(57, 57, 57);
-    #closeModal {
-        filter: invert(1);
-    }
-    .total  {
-        border-top : 3px solid white;
-    }
-}
-
 //responsivity 
 @media (max-width: 700px) {
     .shopping_cart {
